@@ -24,6 +24,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -150,10 +151,10 @@
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="416" y="146" width="524" height="509" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1366.741@0.27.1366.741" timestamp="1587272195299" />
-    <state x="220" y="27" width="916" height="741" key="CommitChangelistDialog2" timestamp="1592214148382">
+    <state x="220" y="27" width="916" height="741" key="CommitChangelistDialog2" timestamp="1592214318277">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="220" y="27" width="916" height="741" key="CommitChangelistDialog2/0.27.1366.741@0.27.1366.741" timestamp="1592214148382" />
+    <state x="220" y="27" width="916" height="741" key="CommitChangelistDialog2/0.27.1366.741@0.27.1366.741" timestamp="1592214318277" />
     <state x="399" y="27" width="557" height="741" key="Diagram.Print.Preview.Dialog" timestamp="1591540011561">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
@@ -202,6 +203,14 @@
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="172" y="31" width="1022" height="737" key="SettingsEditor/0.27.1366.741@0.27.1366.741" timestamp="1591540121049" />
+    <state x="278" y="133" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1592214174065">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="278" y="133" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1366.741@0.27.1366.741" timestamp="1592214174065" />
+    <state x="451" y="317" width="454" height="167" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1592214326574">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="451" y="317" width="454" height="167" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.1366.741@0.27.1366.741" timestamp="1592214326574" />
     <state x="0" y="101" width="1356" height="599" key="new project wizard" timestamp="1589714965449">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
