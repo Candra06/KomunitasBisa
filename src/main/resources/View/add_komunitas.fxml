@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AddKomunitas">
+    <children>
+        <Pane prefHeight="608.0" prefWidth="355.0" style="-fx-background-color: #6eecc6;">
+            <children>
+                <JFXButton fx:id="btnAddData" layoutX="90.0" layoutY="301.0" onAction="#btnAddDataOnClick" prefHeight="54.0" prefWidth="163.0" style="-fx-background-radius: 10px; -fx-border-color: #fff; -fx-border-radius: 10px;" text="Lihat Data" textFill="#fcf9f9">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </JFXButton>
+                <Label layoutX="33.0" layoutY="160.0" text="Data Komunitas" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="32.0" />
+                    </font>
+                </Label>
+                <Label layoutX="33.0" layoutY="221.0" prefHeight="54.0" prefWidth="289.0" text="Tambahkan data Komunitas dan lengkapi form yang tersedia dengan benar." textAlignment="CENTER" textFill="WHITE" wrapText="true" />
+                <ImageView fitHeight="54.0" fitWidth="188.0" layoutX="15.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../Assets/Image/Logowht.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </Pane>
+
+        <JFXButton fx:id="btnClose" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="861.0" onAction="#btnCloseOnClick" prefHeight="30.0" prefWidth="20.0">
+            <graphic>
+                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../Assets/Image/close_green.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </JFXButton>
+
+        <Pane fx:id="paneKomunitas1" layoutX="359.0" layoutY="36.0" prefHeight="560.0" prefWidth="550.0" style="-fx-background-color: #fff;">
+            <children>
+                <JFXTextField fx:id="txtNamaKomuitas" focusColor="#6eecc6" layoutX="53.0" layoutY="159.0" prefHeight="26.0" prefWidth="450.0" promptText="Nama Komunitas" style="-fx-prompt-text-fill: #908e8e;" unFocusColor="#908e8e" />
+                <JFXTextArea fx:id="txtVisi" focusColor="#6eecc6" layoutX="53.0" layoutY="219.0" prefHeight="64.0" prefWidth="220.0" promptText="Visi Komunitas" style="-fx-prompt-text-fill: #908e8e;" unFocusColor="#908e8e" />
+                <JFXTextArea fx:id="txtMisi" focusColor="#6eecc6" layoutX="283.0" layoutY="219.0" prefHeight="64.0" prefWidth="220.0" promptText="Misi Komunitas" style="-fx-prompt-text-fill: #908e8e;" unFocusColor="#908e8e" />
+                <JFXTextArea fx:id="txtDeskripsi" focusColor="#6eecc6" layoutX="53.0" layoutY="315.0" prefHeight="64.0" prefWidth="450.0" promptText="Deskripsi Komunitas" style="-fx-prompt-text-fill: #908e8e;" unFocusColor="#908e8e" />
+                <JFXButton fx:id="btnUploadLogo" layoutX="55.0" layoutY="411.0" onAction="#btnUploasOnClick" prefHeight="40.0" prefWidth="190.0" style="-fx-border-radius: 10px; -fx-background-color: #c9c7c9;" text="LOGO KOMUNITAS" textFill="#4d4d4d" />
+                <Label layoutX="53.0" layoutY="40.0" text="Lengkapi data komunitas anda dengan benar" textFill="#908e8e" />
+                <JFXButton fx:id="btnNextLevel" layoutX="193.0" layoutY="496.0" onAction="#btnNextOnClick" prefHeight="40.0" prefWidth="181.0" style="-fx-border-radius: 10px; -fx-background-color: #6eecc6; -fx-background-radius: 10px;" text="SELANJUTNYA" textFill="WHITE" />
+                <Pane layoutX="50.0" layoutY="94.0" prefHeight="48.0" prefWidth="200.0" style="-fx-background-color: #6eecc6; -fx-background-radius: 10px 10px 0px 0px;">
+                    <children>
+                        <Label fx:id="tabLangkah1" layoutX="63.0" layoutY="15.0" text="Langkah 1" textFill="WHITE">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+                <Pane fx:id="tabLangkah2" layoutX="303.0" layoutY="94.0" prefHeight="48.0" prefWidth="200.0" style="-fx-background-color: #eaeaec; -fx-background-radius: 10px 10px 0px 0px;">
+                    <children>
+                        <Label layoutX="68.0" layoutY="15.0" text="Langkah 2" textFill="#908e8e">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+            </children>
+        </Pane>
+        <Pane fx:id="paneKomunitas2" layoutX="357.0" layoutY="39.0" prefHeight="560.0" prefWidth="550.0" style="-fx-background-color: #fff;">
+            <children>
+                <Label layoutX="53.0" layoutY="31.0" text="Lengkapi data pengurus komunitas anda dengan benar" textFill="#908e8e" />
+                <Pane fx:id="tabLangkah1Done" layoutX="50.0" layoutY="85.0" prefHeight="48.0" prefWidth="200.0" style="-fx-background-color: #eaeaec; -fx-background-radius: 10px 10px 0px 0px;">
+                    <children>
+                        <Label layoutX="63.0" layoutY="15.0" text="Langkah 1" textFill="#908e8e">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+                <Pane fx:id="tabLangkah2Go" layoutX="303.0" layoutY="85.0" prefHeight="48.0" prefWidth="200.0" style="-fx-background-color: #6eecc6; -fx-background-radius: 10px 10px 0px 0px;">
+                    <children>
+                        <Label layoutX="68.0" layoutY="15.0" text="Langkah 2" textFill="WHITE">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+                <ScrollPane layoutX="50.0" layoutY="151.0" prefHeight="387.0" prefWidth="450.0">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="616.0" prefWidth="427.0" style="-fx-background-color: #fff;">
+                            <children>
+                                <JFXTextField fx:id="txtNamaKetua" focusColor="#6eecc6" layoutX="39.0" layoutY="49.0" prefHeight="26.0" prefWidth="370.0" promptText="Nama Lengkap" style="-fx-prompt-text-fill: #908e8e;" unFocusColor="#d0cdcd" />
+                                <JFXTextField fx:id="txtNoHPKetua" focusColor="#6eecc6" layoutX="40.0" layoutY="91.0" prefHeight="26.0" prefWidth="369.0" promptText="Nomor HP" style="-fx-prompt-text-fill: #908e8e;" unFocusColor="#d0cdcd" />
+                                <Label layoutX="41.0" layoutY="23.0" text="Profil Ketua" textFill="#6f6c6c" />
+                                <JFXTextField fx:id="txtNamaWakil" focusColor="#6eecc6" layoutX="39.0" layoutY="182.0" prefHeight="26.0" prefWidth="370.0" promptText="Nama Lengkap" style="-fx-prompt-text-fill: #908e8e;" unFocusColor="#d0cdcd" />
+                                <JFXTextField fx:id="txtNoHPWakil" focusColor="#6eecc6" layoutX="40.0" layoutY="224.0" prefHeight="26.0" prefWidth="369.0" promptText="Nomor HP" style="-fx-prompt-text-fill: #908e8e;" unFocusColor="#d0cdcd" />
+                                <Label layoutX="41.0" layoutY="156.0" text="Profil Wakil Ketua" textFill="#6f6c6c" />
+                                <JFXTextField fx:id="txtNamaSekertaris" focusColor="#6eecc6" layoutX="40.0" layoutY="305.0" prefHeight="26.0" prefWidth="370.0" promptText="Nama Lengkap" style="-fx-prompt-text-fill: #908e8e;" unFocusColor="#d0cdcd" />
+                                <JFXTextField fx:id="txtNoHPSekertaris" focusColor="#6eecc6" layoutX="41.0" layoutY="347.0" prefHeight="26.0" prefWidth="369.0" promptText="Nomor HP" style="-fx-prompt-text-fill: #908e8e;" unFocusColor="#d0cdcd" />
+                                <Label layoutX="42.0" layoutY="279.0" text="Profil Sekertaris" textFill="#6f6c6c" />
+                                <JFXTextField fx:id="txtNamaBendahara" focusColor="#6eecc6" layoutX="39.0" layoutY="434.0" prefHeight="26.0" prefWidth="370.0" promptText="Nama Lengkap" style="-fx-prompt-text-fill: #908e8e;" unFocusColor="#d0cdcd" />
+                                <JFXTextField fx:id="txtNoHPBendahara" focusColor="#6eecc6" layoutX="40.0" layoutY="476.0" prefHeight="26.0" prefWidth="369.0" promptText="Nomor HP" style="-fx-prompt-text-fill: #908e8e;" unFocusColor="#d0cdcd" />
+                                <Label layoutX="41.0" layoutY="408.0" text="Profil Bendahara" textFill="#6f6c6c" />
+                                <JFXButton fx:id="btnBack" layoutX="45.0" layoutY="536.0" onAction="#btnBackOnClick" prefHeight="40.0" prefWidth="169.0" style="-fx-border-radius: 10px; -fx-background-color: #fff; -fx-background-radius: 10px; -fx-border-color: #6eecc6;" text="KEMBALI" textFill="#6eecc6" />
+                                <JFXButton fx:id="btnSave" layoutX="251.0" layoutY="535.0" onAction="#btnSaveOnClick" prefHeight="40.0" prefWidth="169.0" style="-fx-border-radius: 10px; -fx-background-color: #6eecc6; -fx-background-radius: 10px;" text="SIMPAN" textFill="WHITE" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </ScrollPane>
+            </children>
+        </Pane>
+    </children>
+
+</AnchorPane>

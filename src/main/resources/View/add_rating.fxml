@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.Rating?>
+
+<AnchorPane prefHeight="358.0" prefWidth="334.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AddRating">
+    <children>
+        <Pane prefHeight="62.0" prefWidth="379.0" style="-fx-background-color: #6eecc6;">
+            <children>
+                <Label layoutX="69.0" layoutY="16.0" text="Rating Komunitas" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font>
+                </Label>
+                <JFXButton fx:id="btnSimpanUser2" layoutX="345.0" layoutY="-1.0" onAction="#btnSimpanUserOnClick" prefHeight="26.0" prefWidth="31.0" style="-fx-background-color: #6eecc6; -fx-border-radius: 10px; -fx-background-radius: 10px;" text="X" textFill="WHITE">
+                    <font>
+                        <Font name="SansSerif Regular" size="16.0" />
+                    </font>
+                </JFXButton>
+            </children>
+        </Pane>
+        <JFXButton fx:id="btnSimpanUser" layoutX="99.0" layoutY="292.0" onAction="#btnSimpanUserOnClick" prefHeight="38.0" prefWidth="181.0" style="-fx-background-color: #6eecc6; -fx-border-radius: 10px; -fx-border-color: #fff; -fx-background-radius: 10px;" text="SIMPAN" textFill="WHITE">
+            <font>
+                <Font name="SansSerif Regular" size="16.0" />
+            </font>
+        </JFXButton>
+
+        <Label layoutX="24.0" layoutY="84.0" text="Beri rating untuk komunitas" textFill="#908e8e" />
+        <Label layoutX="127.0" layoutY="127.0" text="Nama Komunitas" textFill="#908e8e">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Label>
+      <Rating layoutX="102.0" layoutY="169.0" prefWidth="266.0" >
+          <prefHeight>32.0</prefHeight>
+      </Rating>
+</children>
+</AnchorPane>

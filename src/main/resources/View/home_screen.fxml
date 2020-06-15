@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.HomeScreen">
+    <children>
+        <Pane layoutX="1.0" prefHeight="200.0" prefWidth="900.0" style="-fx-background-color: #6eecc6;">
+            <children>
+                <Label layoutX="258.0" layoutY="88.0" text="KOMUNITAS BISA" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="40.0" />
+                    </font>
+                </Label>
+                <JFXButton fx:id="btnClose" layoutX="863.0" layoutY="-4.0" onAction="#btnCloseOnClick" text="X" textFill="WHITE">
+                    <font>
+                        <Font name="Liberation Mono Bold" size="18.0" />
+                    </font>
+                </JFXButton>
+            </children></Pane>
+        <JFXButton fx:id="btnEvent" layoutX="145.0" layoutY="315.0" onAction="#btnEventOnClick" prefHeight="156.0" prefWidth="186.0" style="-fx-background-color: #6eecc6; -fx-content-display: top;" text="EVENTS" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assets/Image/events.png" />
+               </image>
+            </ImageView>
+         </graphic></JFXButton>
+        <JFXButton fx:id="btnLogin" layoutX="358.0" layoutY="315.0" onAction="#btnLoginOnClick" prefHeight="156.0" prefWidth="186.0" style="-fx-content-display: top; -fx-background-color: #6eecc6;" text="LOGIN" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" style="-fx-content-display: top;">
+               <image>
+                  <Image url="@../Assets/Image/enter.png" />
+               </image>
+            </ImageView>
+         </graphic></JFXButton>
+        <JFXButton fx:id="btnRegister" layoutX="573.0" layoutY="315.0" onAction="#btnRegisterOnClick" prefHeight="156.0" prefWidth="186.0" style="-fx-content-display: top; -fx-background-color: #6eecc6;" text="REGISTER" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assets/Image/clipboard.png" />
+               </image>
+            </ImageView>
+         </graphic></JFXButton>
+    </children>
+</AnchorPane>

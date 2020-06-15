@@ -1,0 +1,89 @@
+package Helper;
+
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Map;
+
+public class ORM {
+    protected static ResultSet selectAll(String table){
+        String sql = String.format("SELECT * FROM %s", table);
+        return getResultSet(sql);
+    }
+
+    protected static ResultSet selectAll(String table, String requirment){
+        String sql = String.format("SELECT * FROM %s WHERE %s", table, requirment);
+        return getResultSet(sql);
+    }
+
+    protected static ResultSet selectAll(String table, String joinTable, String foreignKey){
+        String sql = String.format("SELECT * FROM %s JOIN %s ON %s.%s = %s.id", table, joinTable, table, foreignKey, joinTable);
+        return getResultSet(sql);
+    }
+
+    protected static ResultSet selectAll(String table, String requirment, String joinTable, String foreignKey){
+        String sql = String.format("SELECT * FROM %s JOIN %s ON %s.%s = %s.id WHERE %s", table, joinTable, table, foreignKey, joinTable, requirment);
+        return getResultSet(sql);
+    }
+
+    public static boolean insert(String table, Map<String, String> params){
+        String columns = table + "(";
+        String values = "VALUES(";
+        for(String key : params.keySet()){
+            columns += String.format("%s,", key);
+        }
+        columns = columns.substring(0, columns.length() - 1);
+        columns += ") ";
+
+        for(String val : params.values()){
+            values += String.format("%s,", val);
+        }
+        values = values.substring(0, values.length() - 1);
+        values += ") ";
+
+        String sql = "INSERT INTO " + columns + values;
+        System.out.println(sql);
+        try {
+            Statement statement = Helper.connect().createStatement();
+            return statement.executeUpdate(sql) > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public static boolean update(String table, Map<String, String> params, String clause){
+        String sql = "UPDATE " + table + " SET ";
+        for(int i=0; i<params.size(); i++){
+            String col = (String) params.keySet().toArray()[i];
+            String val = (String) params.values().toArray()[i];
+            sql += col + " = " + val;
+            if(i != params.size() - 1){
+                sql += ", ";
+            }
+        }
+        sql += " WHERE " + clause;
+        System.out.println(sql);
+        try {
+            Statement statement = Helper.connect().createStatement();
+            return statement.executeUpdate(sql) > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+
+    private static ResultSet getResultSet(String sql) {
+        System.out.println(sql);
+        ResultSet resultSet = null;
+        try {
+            Statement statement = Helper.connect().createStatement();
+            resultSet = statement.executeQuery(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return resultSet;
+    }
+}

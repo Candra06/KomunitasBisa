@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.DonasiPage">
+   <children>
+      <JFXListView fx:id="listEvent" layoutX="367.0" layoutY="87.0" onMouseClicked="#cellOnClick" prefHeight="487.0" prefWidth="519.0" />
+      <Pane prefHeight="600.0" prefWidth="354.0" style="-fx-background-color: #6eecc6;">
+         <children>
+            <Label layoutX="78.0" layoutY="154.0" text="Data Donasi" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="32.0" />
+               </font>
+            </Label>
+            <Label layoutX="19.0" layoutY="194.0" prefHeight="82.0" prefWidth="316.0" text="Temukan data donasi untuk setiap event yang diadakan." textAlignment="CENTER" textFill="WHITE" wrapText="true" />
+
+            <ImageView fitHeight="82.0" fitWidth="200.0" layoutX="19.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assets/Image/Logowht.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <JFXComboBox fx:id="cbbFilter" focusColor="#6eecc6" layoutX="367.0" layoutY="31.0" prefHeight="28.0" prefWidth="200.0" promptText="Filter Event" style="-fx-prompt-text-fill: #908e8e;" unFocusColor="#d6d3d3" />
+      <JFXTextField fx:id="txtCari" focusColor="#6eecc6" layoutX="685.0" layoutY="33.0" prefHeight="26.0" prefWidth="200.0" promptText="Cari event" style="-fx-prompt-text-fill: #908e8e;" unFocusColor="#d6d3d3" />
+      <JFXButton fx:id="btnClose" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="852.0" layoutY="3.0" onAction="#btnCloseOnClick" prefHeight="30.0" prefWidth="20.0">
+         <graphic>
+            <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assets/Image/close_green.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+   </children>
+</AnchorPane>

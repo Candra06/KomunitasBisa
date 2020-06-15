@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>komunitas</OriginalElement>
+  <nodes>
+    <node x="6165.0" y="1773.0">komunitas.RegisterVolunteer</node>
+    <node x="4844.0" y="322.0">komunitas.DashboardUser</node>
+    <node x="4465.0" y="1664.5">komunitas.ProfilAdminKomunitas</node>
+    <node x="5786.5" y="814.0">komunitas.Volunteer</node>
+    <node x="0.0" y="826.0">komunitas.Akun</node>
+    <node x="5849.0" y="1725.0">komunitas.ListVolunteer</node>
+    <node x="3395.0" y="250.0">komunitas.DashboardKomunitas</node>
+    <node x="4821.0" y="1737.0">komunitas.ProfilAdmin</node>
+    <node x="785.5" y="778.0">komunitas.Event</node>
+    <node x="381.0" y="2402.0">komunitas.DetailKomunitas</node>
+    <node x="5533.0" y="1761.0">komunitas.VolunteerPage</node>
+    <node x="349.0" y="1749.0">komunitas.DetailEvent</node>
+    <node x="4590.5" y="814.0">komunitas.Pengurus</node>
+    <node x="4513.0" y="310.0">komunitas.HomeScreen</node>
+    <node x="2738.0" y="1676.5">komunitas.RatingPage</node>
+    <node x="3706.0" y="838.0">komunitas.Users</node>
+    <node x="3776.0" y="1628.5">komunitas.ProfilUser</node>
+    <node x="3743.0" y="334.5">komunitas.ORM</node>
+    <node x="705.0" y="1652.5">komunitas.EventPage</node>
+    <node x="5177.0" y="1652.5">komunitas.AddAdmin</node>
+    <node x="4132.0" y="1676.5">komunitas.UserPage</node>
+    <node x="2368.0" y="1724.5">komunitas.AddRating</node>
+    <node x="2411.7583333333323" y="766.0">komunitas.Komunitas</node>
+    <node x="6684.5" y="814.0">komunitas.Donasi</node>
+    <node x="6725.0" y="1688.5">komunitas.DonasiPage</node>
+    <node x="0.0" y="2402.0">komunitas.AddUser</node>
+    <node x="3420.0" y="1244.0">komunitas.Register</node>
+    <node x="7041.0" y="1773.0">komunitas.KonfirmasiDonasi</node>
+    <node x="1363.0" y="1592.5">komunitas.AddEvent</node>
+    <node x="6352.0" y="1712.5">komunitas.AddDonasiUser</node>
+    <node x="4165.0" y="202.0">komunitas.DashboardAdmin</node>
+    <node x="1698.0" y="1688.5">komunitas.KomunitasPage</node>
+    <node x="1047.0" y="1700.5">komunitas.ListEvent</node>
+    <node x="3085.0" y="1688.5">komunitas.AdminKomunitasPage</node>
+    <node x="2032.9999999999998" y="1400.5">komunitas.AddKomunitas</node>
+    <node x="4189.0" y="0.0">komunitas.Helper</node>
+    <node x="33.0" y="1700.0">komunitas.Login</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="komunitas.KomunitasPage" target="komunitas.Komunitas">
+      <point x="-2.2737367544323206E-13" y="-112.0" />
+      <point x="1855.4999999999998" y="1204.0" />
+      <point x="2461.4249999999993" y="1204.0" />
+      <point x="-248.33333333333326" y="209.0" />
+    </edge>
+    <edge source="komunitas.ORM" target="komunitas.Helper">
+      <point x="0.0" y="-99.5" />
+      <point x="3944.0" y="182.0" />
+      <point x="4273.0" y="182.0" />
+      <point x="-56.0" y="76.0" />
+    </edge>
+    <edge source="komunitas.DashboardUser" target="komunitas.Helper">
+      <point x="0.0" y="-112.0" />
+      <point x="5008.0" y="172.0" />
+      <point x="4441.0" y="172.0" />
+      <point x="112.0" y="76.0" />
+    </edge>
+    <edge source="komunitas.Register" target="komunitas.Komunitas">
+      <point x="-112.0" y="-556.5" />
+      <point x="3476.0" y="1204.0" />
+      <point x="2958.0916666666653" y="1204.0" />
+      <point x="248.33333333333326" y="209.0" />
+    </edge>
+    <edge source="komunitas.Event" target="komunitas.ORM">
+      <point x="122.5" y="-197.0" />
+      <point x="1153.0" y="716.0" />
+      <point x="3843.5" y="716.0" />
+      <point x="-100.5" y="99.5" />
+    </edge>
+    <edge source="komunitas.DashboardAdmin" target="komunitas.Helper">
+      <point x="0.0" y="-232.0" />
+      <point x="0.0" y="76.0" />
+    </edge>
+    <edge source="komunitas.EventPage" target="komunitas.Event">
+      <point x="0.0" y="-148.0" />
+      <point x="866.0" y="1224.0" />
+      <point x="969.25" y="1224.0" />
+      <point x="-61.25" y="197.0" />
+    </edge>
+    <edge source="komunitas.RegisterVolunteer" target="komunitas.Volunteer">
+      <point x="0.0" y="-27.5" />
+      <point x="6248.5" y="1224.0" />
+      <point x="6137.333333333333" y="1224.0" />
+      <point x="140.33333333333303" y="161.0" />
+    </edge>
+    <edge source="komunitas.Donasi" target="komunitas.ORM">
+      <point x="-94.25" y="-161.0" />
+      <point x="6778.75" y="696.0" />
+      <point x="4101.928571428572" y="696.0" />
+      <point x="157.92857142857156" y="99.5" />
+    </edge>
+    <edge source="komunitas.Komunitas" target="komunitas.ORM">
+      <point x="-149.0" y="-209.0" />
+      <point x="2560.7583333333323" y="726.0" />
+      <point x="3872.2142857142853" y="726.0" />
+      <point x="-71.78571428571422" y="99.5" />
+    </edge>
+    <edge source="komunitas.DonasiPage" target="komunitas.Donasi">
+      <point x="0.0" y="-112.0" />
+      <point x="0.0" y="161.0" />
+    </edge>
+    <edge source="komunitas.DashboardKomunitas" target="komunitas.Helper">
+      <point x="0.0" y="-184.0" />
+      <point x="3559.0" y="172.0" />
+      <point x="4217.0" y="172.0" />
+      <point x="-112.0" y="76.0" />
+    </edge>
+    <edge source="komunitas.ProfilUser" target="komunitas.Users">
+      <point x="0.0" y="-172.0" />
+      <point x="0.0" y="137.0" />
+    </edge>
+    <edge source="komunitas.Volunteer" target="komunitas.ORM">
+      <point x="105.25" y="-161.0" />
+      <point x="6102.25" y="706.0" />
+      <point x="4073.2142857142853" y="706.0" />
+      <point x="129.21428571428578" y="99.5" />
+    </edge>
+    <edge source="komunitas.AddRating" target="komunitas.Komunitas">
+      <point x="0.0" y="-76.0" />
+      <point x="2543.0" y="1224.0" />
+      <point x="2660.0916666666653" y="1224.0" />
+      <point x="-49.66666666666674" y="209.0" />
+    </edge>
+    <edge source="komunitas.AdminKomunitasPage" target="komunitas.Komunitas">
+      <point x="0.0" y="-112.0" />
+      <point x="3242.5" y="1214.0" />
+      <point x="2858.7583333333323" y="1214.0" />
+      <point x="149.0" y="209.0" />
+    </edge>
+    <edge source="komunitas.Users" target="komunitas.ORM">
+      <point x="-119.0" y="-137.0" />
+      <point x="3825.0" y="746.0" />
+      <point x="3929.642857142857" y="746.0" />
+      <point x="-14.357142857142662" y="99.5" />
+    </edge>
+    <edge source="komunitas.ListEvent" target="komunitas.Event">
+      <point x="0.0" y="-100.0" />
+      <point x="1195.0" y="1224.0" />
+      <point x="1091.75" y="1224.0" />
+      <point x="61.25" y="197.0" />
+    </edge>
+    <edge source="komunitas.RatingPage" target="komunitas.Komunitas">
+      <point x="0.0" y="-124.0" />
+      <point x="2901.5" y="1224.0" />
+      <point x="2759.424999999999" y="1224.0" />
+      <point x="49.666666666666515" y="209.0" />
+    </edge>
+    <edge source="komunitas.DetailEvent" target="komunitas.Event">
+      <point x="0.0" y="-51.5" />
+      <point x="517.0" y="1224.0" />
+      <point x="846.75" y="1224.0" />
+      <point x="-183.75" y="197.0" />
+    </edge>
+    <edge source="komunitas.KonfirmasiDonasi" target="komunitas.Donasi">
+      <point x="0.0" y="-27.5" />
+      <point x="7124.0" y="1224.0" />
+      <point x="6998.666666666667" y="1224.0" />
+      <point x="125.66666666666697" y="161.0" />
+    </edge>
+    <edge source="komunitas.AddDonasiUser" target="komunitas.Donasi">
+      <point x="0.0" y="-88.0" />
+      <point x="6528.5" y="1224.0" />
+      <point x="6747.333333333333" y="1224.0" />
+      <point x="-125.66666666666697" y="161.0" />
+    </edge>
+    <edge source="komunitas.Login" target="komunitas.Akun">
+      <point x="0.0" y="-100.5" />
+      <point x="0.0" y="149.0" />
+    </edge>
+    <edge source="komunitas.AddAdmin" target="komunitas.Pengurus">
+      <point x="0.0" y="-148.0" />
+      <point x="5345.0" y="1214.0" />
+      <point x="4976.375" y="1214.0" />
+      <point x="165.375" y="161.0" />
+    </edge>
+    <edge source="komunitas.AddEvent" target="komunitas.Event">
+      <point x="0.0" y="-208.0" />
+      <point x="1520.5" y="1224.0" />
+      <point x="1214.25" y="1224.0" />
+      <point x="183.75" y="197.0" />
+    </edge>
+    <edge source="komunitas.Pengurus" target="komunitas.ORM">
+      <point x="110.25" y="-161.0" />
+      <point x="4921.25" y="726.0" />
+      <point x="4015.7857142857138" y="726.0" />
+      <point x="71.78571428571422" y="99.5" />
+    </edge>
+    <edge source="komunitas.ProfilAdmin" target="komunitas.Pengurus">
+      <point x="0.0" y="-63.5" />
+      <point x="4989.0" y="1224.0" />
+      <point x="4866.125" y="1224.0" />
+      <point x="55.125" y="161.0" />
+    </edge>
+    <edge source="komunitas.VolunteerPage" target="komunitas.Volunteer">
+      <point x="0.0" y="-39.5" />
+      <point x="5681.0" y="1224.0" />
+      <point x="5856.666666666667" y="1224.0" />
+      <point x="-140.33333333333303" y="161.0" />
+    </edge>
+    <edge source="komunitas.ProfilAdminKomunitas" target="komunitas.Pengurus">
+      <point x="0.0" y="-136.0" />
+      <point x="4633.0" y="1224.0" />
+      <point x="4755.875" y="1224.0" />
+      <point x="-55.125" y="161.0" />
+    </edge>
+    <edge source="komunitas.ListVolunteer" target="komunitas.Volunteer">
+      <point x="0.0" y="-75.5" />
+      <point x="0.0" y="161.0" />
+    </edge>
+    <edge source="komunitas.AddKomunitas" target="komunitas.Komunitas">
+      <point x="0.0" y="-400.0" />
+      <point x="2190.5" y="1214.0" />
+      <point x="2560.7583333333323" y="1214.0" />
+      <point x="-149.0" y="209.0" />
+    </edge>
+    <edge source="komunitas.Akun" target="komunitas.ORM">
+      <point x="90.5" y="-149.0" />
+      <point x="271.5" y="696.0" />
+      <point x="3786.0714285714284" y="696.0" />
+      <point x="-157.92857142857156" y="99.5" />
+    </edge>
+    <edge source="komunitas.Register" target="komunitas.Pengurus">
+      <point x="112.0" y="-556.5" />
+      <point x="3700.0" y="1214.0" />
+      <point x="4645.625" y="1214.0" />
+      <point x="-165.375" y="161.0" />
+    </edge>
+    <edge source="komunitas.UserPage" target="komunitas.Users">
+      <point x="0.0" y="-124.0" />
+      <point x="4288.5" y="1204.0" />
+      <point x="4102.666666666666" y="1204.0" />
+      <point x="158.66666666666652" y="137.0" />
+    </edge>
+    <edge source="komunitas.Register" target="komunitas.Users">
+      <point x="0.0" y="-556.5" />
+      <point x="3588.0" y="1204.0" />
+      <point x="3785.333333333333" y="1204.0" />
+      <point x="-158.66666666666652" y="137.0" />
+    </edge>
+    <edge source="komunitas.HomeScreen" target="komunitas.Helper">
+      <point x="0.0" y="-124.0" />
+      <point x="4668.5" y="182.0" />
+      <point x="4385.0" y="182.0" />
+      <point x="56.0" y="76.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.7708333333333334" x="635.1351351351351" y="790.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

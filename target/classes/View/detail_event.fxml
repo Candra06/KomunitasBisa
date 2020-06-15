@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXProgressBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="619.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.DetailEvent">
+    <children>
+        <Pane prefHeight="62.0" prefWidth="600.0" style="-fx-background-color: #6eecc6;">
+            <children>
+                <Label layoutX="217.0" layoutY="16.0" text="Detail Event" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font>
+                </Label>
+                <JFXButton fx:id="btnSimpanUser2" layoutX="553.0" layoutY="7.0" onAction="#btnSimpanUserOnClick" prefHeight="26.0" prefWidth="31.0" style="-fx-background-color: #6eecc6; -fx-border-radius: 10px; -fx-background-radius: 10px;" text="X" textFill="WHITE">
+                    <font>
+                        <Font name="SansSerif Regular" size="16.0" />
+                    </font>
+                </JFXButton>
+            </children>
+        </Pane>
+    <AnchorPane layoutX="47.0" layoutY="75.0" minHeight="0.0" minWidth="0.0" prefHeight="531.0" prefWidth="507.0">
+         <children>
+            <Label layoutX="14.0" layoutY="197.0" text="Nama Event">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="399.0" layoutY="197.0" text="Tanggal Event" />
+            <ImageView fitHeight="189.0" fitWidth="478.0" layoutX="65.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assets/Image/Events%20Management%20festival%20image.jpg" />
+               </image>
+            </ImageView>
+            <ScrollPane layoutX="15.0" layoutY="239.0" prefHeight="165.0" prefWidth="478.0">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="159.0" prefWidth="453.0">
+                     <children>
+                        <Label layoutX="8.0" layoutY="14.0" prefHeight="111.0" prefWidth="438.0" text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged." wrapText="true" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </ScrollPane>
+            <Label layoutX="14.0" layoutY="221.0" text="Deskripsi Event" />
+            <Label layoutX="14.0" layoutY="409.0" text="Volunteer" />
+            <Label layoutX="384.0" layoutY="409.0" text="Dana diperlukan" />
+            <JFXProgressBar layoutX="16.0" layoutY="448.0" prefHeight="16.0" />
+            <JFXProgressBar layoutX="292.0" layoutY="448.0" prefHeight="16.0" />
+            <Label layoutX="16.0" layoutY="429.0" text="5/10" />
+            <Label layoutX="367.0" layoutY="429.0" text="100.000/1.000.000" />
+            <JFXButton layoutX="15.0" layoutY="481.0" prefHeight="39.0" prefWidth="149.0" style="-fx-background-color: #6eecc6; -fx-text-fill: #ffffff;" text="Daftar Volunteer" />
+            <JFXButton layoutX="343.0" layoutY="481.0" prefHeight="39.0" prefWidth="149.0" style="-fx-background-color: #6eecc6; -fx-text-fill: #ffffff;" text="Donasi" />
+         </children>
+      </AnchorPane>
+    </children>
+
+</AnchorPane>

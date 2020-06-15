@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ListVolunteer">
+    <children>
+        <JFXButton fx:id="btnClose" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="832.0" layoutY="-1.0" onAction="#btnCloseOnClick" prefHeight="30.0" prefWidth="33.0" style="-fx-background-color: #ffffff; -fx-border-color: #fff; -fx-border-style: none;">
+            <graphic>
+                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../Assets/Image/close_green.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </JFXButton>
+        <JFXListView fx:id="listEvent" layoutX="367.0" layoutY="87.0" onMouseClicked="#cellOnClick" prefHeight="487.0" prefWidth="519.0" />
+        <Pane prefHeight="600.0" prefWidth="354.0" style="-fx-background-color: #6eecc6;">
+            <children>
+                <ImageView fitHeight="82.0" fitWidth="200.0" layoutX="19.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../Assets/Image/Logowht.png" />
+                    </image>
+                </ImageView>
+                <Label layoutX="47.0" layoutY="155.0" text="Data Volunteer" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="32.0" />
+                    </font>
+                </Label>
+                <Label layoutX="34.0" layoutY="210.0" prefHeight="63.0" prefWidth="300.0" text="List data volunteer yang telah bergabung dengan event yang telah diadakan." textAlignment="CENTER" textFill="WHITE" wrapText="true" />
+<!--                <JFXButton fx:id="btnUser" layoutX="91.0" layoutY="300.0" onAction="#btnLoginOnClick" prefHeight="48.0" prefWidth="169.0" style="-fx-border-color: #fff; -fx-border-radius: 10px; -fx-background-color: #6eecc6; -fx-background-radius: 10px;" text="LOGIN" textFill="WHITE" />-->
+            </children>
+        </Pane>
+        <JFXComboBox focusColor="#6eecc6" layoutX="367.0" layoutY="31.0" prefHeight="28.0" prefWidth="200.0" promptText="Filter Event" style="-fx-prompt-text-fill: #908e8e;" unFocusColor="#d6d3d3" />
+        <JFXTextField focusColor="#6eecc6" layoutX="685.0" layoutY="33.0" prefHeight="26.0" prefWidth="200.0" promptText="Cari nama volunteer" style="-fx-prompt-text-fill: #908e8e;" unFocusColor="#d6d3d3" />
+    </children>
+</AnchorPane>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.DashboardAdmin">
+   <children>
+      <Pane prefHeight="200.0" prefWidth="900.0" style="-fx-background-color: #6eecc6;">
+         <children>
+            <Label layoutX="338.0" layoutY="56.0" text="Selamat datang!" textFill="WHITE">
+               <font>
+                  <Font size="32.0" />
+               </font>
+            </Label>
+            <Label layoutX="423.0" layoutY="102.0" text="Admin" textFill="WHITE">
+               <font>
+                  <Font size="30.0" />
+               </font></Label>
+            <JFXButton fx:id="btnClose" contentDisplay="GRAPHIC_ONLY" layoutX="859.0" layoutY="4.0" onAction="#btnCloseOnClick">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Assets/Image/close.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+      </Pane>
+      <JFXButton fx:id="btnKomunitas" alignment="CENTER" contentDisplay="TOP" layoutX="70.0" layoutY="232.0" onAction="#btnKomunitasOnClick" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: #6eecc6; -fx-background-radius: 10px; -fx-background-position: 90%;" text="Komunitas" textFill="WHITE" AnchorPane.bottomAnchor="218.0" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="680.0" AnchorPane.topAnchor="232.0">
+         <graphic>
+            <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assets/Image/leader.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <padding>
+            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+         </padding>
+      </JFXButton>
+      <JFXButton fx:id="btnUser" alignment="CENTER" contentDisplay="TOP" layoutX="268.0" layoutY="232.0" onAction="#btnUserOnClick" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: #6eecc6; -fx-background-radius: 10px; -fx-background-position: 90%;" text="User" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assets/Image/group.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <padding>
+            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+         </padding>
+      </JFXButton>
+      <JFXButton fx:id="btnRating" alignment="CENTER" contentDisplay="TOP" layoutX="473.0" layoutY="232.0" onAction="#btnRatingOnClick" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: #6eecc6; -fx-background-radius: 10px; -fx-background-position: 90%;" text="Rating Komunitas" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assets/Image/rating.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <padding>
+            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+         </padding>
+      </JFXButton>
+      <JFXButton fx:id="btnAdmin" alignment="CENTER" contentDisplay="TOP" layoutX="669.0" layoutY="232.0" onAction="#btnAdminOnClick" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: #6eecc6; -fx-background-radius: 10px; -fx-background-position: 90%;" text="Admin Komunitas" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assets/Image/man.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <padding>
+            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+         </padding>
+      </JFXButton>
+      <JFXButton fx:id="btnEvent" alignment="CENTER" contentDisplay="TOP" layoutX="70.0" layoutY="405.0" onAction="#btnEventOnClick" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: #6eecc6; -fx-background-radius: 10px; -fx-background-position: 90%;" text="Event" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assets/Image/event.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <padding>
+            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+         </padding>
+      </JFXButton>
+      <JFXButton fx:id="btnVolunteer" alignment="CENTER" contentDisplay="TOP" layoutX="268.0" layoutY="405.0" onAction="#btnVolunteerOnClick" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: #6eecc6; -fx-background-radius: 10px; -fx-background-position: 90%;" text="Volunteer" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assets/Image/volunteer.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <padding>
+            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+         </padding>
+      </JFXButton>
+      <JFXButton fx:id="btnDonasi" alignment="CENTER" contentDisplay="TOP" layoutX="473.0" layoutY="405.0" onAction="#btnDonasiOnClick" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: #6eecc6; -fx-background-radius: 10px; -fx-background-position: 90%;" text="Donasi" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assets/Image/payment.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <padding>
+            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+         </padding>
+      </JFXButton>
+      <JFXButton fx:id="btnLogout" alignment="CENTER" contentDisplay="TOP" layoutX="669.0" layoutY="405.0" onAction="#btnLogoutOnClick" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: #6eecc6; -fx-background-radius: 10px; -fx-background-position: 90%;" text="Profile" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assets/Image/avatar.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <padding>
+            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+         </padding>
+      </JFXButton>
+   </children>
+</AnchorPane>
