@@ -1,4 +1,7 @@
 package Model;
 
-public class Donasi {
+import Helper.ORM;
+
+public class Donasi extends ORM {
+    
 }
