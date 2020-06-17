@@ -3,7 +3,10 @@ package Model;
 import Helper.ORM;
 
 import java.sql.ResultSet;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.Map;
 
 public class Event extends ORM{
@@ -123,8 +126,21 @@ public class Event extends ORM{
         return event;
     }
 
-    public static boolean InsertEvent(){
-        Map<String, String> data = null;
+    public static boolean InsertEvent(int id_komunitas,String judul, String tanggal, String deskripsi, int jml_donasi, int jml_volunteer){
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date date = new Date();
+        String create_at = format.format(date);
+
+        Map<String, String> data = new HashMap<String, String>();
+        data.put("id_komunitas", "'"+id_komunitas+"'");
+        data.put("judul_event", "'"+judul+"'");
+        data.put("tanggal", "'"+tanggal+"'");
+        data.put("deskripsi", "'"+deskripsi+"'");
+        data.put("jmlh_donasi", "'"+jml_donasi+"'");
+        data.put("jmlh_volunteere", "'"+jml_volunteer+"'");
+        data.put("status", "'on_going'");
+        data.put("create_at", "'"+create_at+"'");
+        data.put("update_at", "'"+create_at+"'");
         boolean hasil = insert(TABLE, data);
         return hasil;
     }
