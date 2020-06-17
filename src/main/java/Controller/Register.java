@@ -1,17 +1,26 @@
 package Controller;
 
+import Helper.Helper;
+import Helper.ORM;
+import Model.Komunitas;
+import Model.Pengurus;
 import Model.Users;
 import com.jfoenix.controls.*;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 
+import java.net.URL;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ResourceBundle;
 
 
-public class Register {
+public class Register implements Initializable {
     @FXML
     private JFXButton btnUser;
 
@@ -76,6 +85,9 @@ public class Register {
     private Pane tabLangkah2;
 
     @FXML
+    private JFXButton btnBack;
+
+    @FXML
     private Pane paneKomunitas2;
 
     @FXML
@@ -83,6 +95,9 @@ public class Register {
 
     @FXML
     private Pane tabLangkah2Go;
+
+    @FXML
+    private JFXButton btnExit;
 
     @FXML
     private JFXTextField txtNamaKetua;
@@ -108,11 +123,15 @@ public class Register {
     @FXML
     private JFXTextField txtNoHPBendahara;
 
-    @FXML
-    private JFXButton btnBack;
 
     @FXML
     private JFXButton btnSave;
+
+    @FXML
+    void btnBackPageOnClick(ActionEvent event) {
+        Helper.changePage(event, "home_screen");
+    }
+
     public void btnUserOnClick(ActionEvent actionEvent) {
 
         this.paneKomunitas1.setVisible(false);
@@ -134,21 +153,107 @@ public class Register {
     }
 
     public void btnSimpanUserOnClick(ActionEvent actionEvent) {
+        if (cbSetuju.isSelected()){
+            simpanAkun();
+            Helper.changePage(actionEvent, "home_screen");
+        }else {
+            Helper.alert("Harap menyetujui ketentuan yang berlaku!", "Warning", "info");
+        }
+    }
 
-        cbbGender = new JFXComboBox<String>();
-        cbbGender.getItems().addAll(
-                "pria",
-                "wanita"
-        );
-        cbbGender.setPromptText("Pilih Gender");
-//        setCbbGender();
-
+    void simpanUser(){
         String gender = (String) cbbGender.getValue();
         boolean status = Users.insertUser(txtNamaUser.getText(), gender, txtNoHPUser.getText(), txtPekerjaan.getText(), txtAlamatUser.getText(), "aktif");
         if (status == true){
-            System.out.println("Insert Berhasil");
+            Helper.alert("Pendaftaran Berhasil", "Berhasil", "sukses");
+
         }else {
-            System.out.println("Insert Gagal");
+            Helper.alert("Pendaftaran Gagal", "Gagal", "gagal");
+        }
+    }
+    void simpanAkun(){
+        boolean status = Users.insertAkun(txtEmailUser.getText(), txtPasswordUser.getText());
+        if (status == true){
+            simpanUser();
+        }else {
+            Helper.alert("Pendaftaran Gagal", "Gagal", "gagal");
+        }
+    }
+
+    void simpanKomunitas(){
+        boolean status = Komunitas.InsertKomunitas(this.txtNamaKomuitas.getText(), this.txtVisi.getText(), this.txtMisi.getText(), this.txtDeskripsi.getText(), "Logo.png");
+        if (status == true){
+            simpanAkunKetua();
+        }else {
+            Helper.alert("Pendaftaran Gagal", "Gagal", "gagal");
+        }
+    }
+
+    void simpanAkunKetua(){
+        String email = txtNoHPKetua.getText();
+        boolean status = Users.insertAkun(email, "adminkomunitasbisa123");
+        if (status == true){
+            simpanKetua();
+        }else {
+            Helper.alert("Pendaftaran Gagal", "Gagal", "gagal");
+        }
+    }
+
+    void simpanKetua(){
+        boolean status = Pengurus.InsertPengurus(txtNamaKetua.getText(), txtNoHPKetua.getText(), "ketua");
+        if (status == true){
+            simpanAkunWakil();
+        }
+    }
+
+    void simpanWakil(){
+        boolean status = Pengurus.InsertPengurus(txtNamaWakil.getText(), txtNoHPWakil.getText(), "wakil");
+        if (status == true){
+            simpanAkunSekertaris();
+        }
+    }
+
+    void simpanSekertaris(){
+        boolean status = Pengurus.InsertPengurus(txtNamaSekertaris.getText(), txtNoHPSekertaris.getText(), "sekertaris");
+        if (status == true){
+            simpanAkunBendahara();
+        }
+    }
+
+    void simpanBendahara(){
+        boolean status = Pengurus.InsertPengurus(txtNamaBendahara.getText(), txtNoHPBendahara.getText(), "bendahara");
+        if (status == true){
+            Helper.alert("Pendaftaran Berhasil", "Berhasil", "sukses");
+        }
+    }
+
+    void simpanAkunWakil(){
+        String email = txtNoHPWakil.getText();
+        boolean status = Users.insertAkun(email, "adminkomunitasbisa123");
+        if (status == true){
+            simpanWakil();
+        }else {
+            Helper.alert("Pendaftaran Gagal", "Gagal", "gagal");
+        }
+    }
+
+    void simpanAkunSekertaris(){
+        String email = txtNoHPSekertaris.getText();
+        boolean status = Users.insertAkun(email, "adminkomunitasbisa123");
+        if (status == true){
+            simpanSekertaris();
+        }else {
+            Helper.alert("Pendaftaran Gagal", "Gagal", "gagal");
+        }
+    }
+
+    void simpanAkunBendahara(){
+        String email = txtNoHPBendahara.getText();
+        boolean status = Users.insertAkun(email, "adminkomunitasbisa123");
+        if (status == true){
+            simpanBendahara();
+        }else {
+            Helper.alert("Pendaftaran Gagal", "Gagal", "gagal");
         }
     }
 
@@ -171,6 +276,8 @@ public class Register {
     }
 
     public void btnSaveOnClick(ActionEvent actionEvent) {
+        simpanKomunitas();
+        Helper.changePage(actionEvent, "home_screen");
     }
 
     public JFXTextField getTxtNamaUser() {
@@ -331,5 +438,23 @@ public class Register {
 
     public void setTxtNoHPBendahara(JFXTextField txtNoHPBendahara) {
         this.txtNoHPBendahara = txtNoHPBendahara;
+    }
+
+    ObservableList<String> gender = FXCollections.observableArrayList("Pilih kelamin", "Laki-laki", "Perempuan");
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        cbbGender.setItems(gender);
+
+        this.paneKomunitas1.setVisible(false);
+        this.paneKomunitas2.setVisible(false);
+        this.paneUser.setVisible(true);
+    }
+
+    public void btnBackStepOnClick(ActionEvent actionEvent) {
+    }
+
+    public void btnExitOnClick(ActionEvent actionEvent) {
+        Helper.closeWindow(actionEvent, this.btnExit);
     }
 }

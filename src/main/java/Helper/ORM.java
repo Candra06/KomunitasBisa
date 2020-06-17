@@ -27,6 +27,26 @@ public class ORM {
         return getResultSet(sql);
     }
 
+    public static ResultSet selectColumn(String table, String[] columns){
+        String col = "";
+        for(String s : columns){
+            col += s + ", ";
+        }
+        col = col.substring(0, col.length() - 2);
+        String sql = String.format("SELECT %s FROM %s", col, table);
+        return getResultSet(sql);
+    }
+
+    public static ResultSet selectColumn(String table, String[] columns, String requirment){
+        String col = "";
+        for(String s : columns){
+            col += s + ", ";
+        }
+        col = col.substring(0, col.length() - 2);
+        String sql = String.format("SELECT %s FROM %s WHERE %s", col, table, requirment);
+        return getResultSet(sql);
+    }
+
     public static boolean insert(String table, Map<String, String> params){
         String columns = table + "(";
         String values = "VALUES(";
@@ -43,7 +63,7 @@ public class ORM {
         values += ") ";
 
         String sql = "INSERT INTO " + columns + values;
-        System.out.println(sql);
+//        System.out.println(sql);
         try {
             Statement statement = Helper.connect().createStatement();
             return statement.executeUpdate(sql) > 0;

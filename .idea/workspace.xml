@@ -2,9 +2,53 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ace3d4c-23a1-4c3c-b574-f89e91b0aaf3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controller/ControllerDonasi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controller/ControllerEvents.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controller/ControllerKomunitas.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controller/ControllerUsers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controller/ControllerVolunteer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Assets/Image/exit.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Assets/Image/exit_primary.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/Akun.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/Donasi.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/DonasiPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/DonasiPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/Event.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/HomeScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/HomeScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/Komunitas.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/Pengurus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/Register.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/Users.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/Volunteer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Volunteer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Helper/Helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Helper/Helper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Helper/ORM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Helper/ORM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Akun.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Akun.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Model/Donasi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Donasi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Komunitas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Komunitas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Pengurus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Pengurus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Users.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/komunitas/AddDonasiUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/komunitas/AddDonasiUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Assets/Image/Logowht.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Assets/Image/Logowht.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/View/dashboard_admin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/View/dashboard_admin.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/View/home_screen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/View/home_screen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/View/pg_login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/View/pg_login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/View/pg_register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/View/pg_register.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Assets/Image/Logowht.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Assets/Image/Logowht.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controller/DonasiPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/DonasiPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controller/HomeScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/HomeScreen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controller/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/Login.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controller/Register.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/Register.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Helper/Helper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Helper/Helper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Helper/ORM.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Helper/ORM.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Model/Users.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Model/Users.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/View/dashboard_admin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/dashboard_admin.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/View/home_screen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/home_screen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/View/pg_login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/pg_login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/View/pg_register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/pg_register.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,17 +78,21 @@
     </option>
   </component>
   <component name="ProjectId" id="1ag9oKiya9NVfYUgsgoyuoYCIbe" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../JavaFXwithMaven/DatabasePBO" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -56,14 +104,15 @@
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="Controller" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/java/Controller" />
-      <recent name="$PROJECT_DIR$/src/main/java/Model" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/Model" />
       <recent name="$PROJECT_DIR$/src/main/java/komunitas" />
       <recent name="$PROJECT_DIR$/src/main/java/Controller" />
       <recent name="$PROJECT_DIR$/src/main/resources/View" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/Controller" />
+      <recent name="$PROJECT_DIR$/src/main/java/Model" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -115,18 +164,51 @@
       <workItem from="1591600974809" duration="60000" />
       <workItem from="1592143765827" duration="671000" />
       <workItem from="1592187721105" duration="599000" />
-      <workItem from="1592213888717" duration="235000" />
+      <workItem from="1592213888717" duration="1135000" />
+      <workItem from="1592320280251" duration="17424000" />
+      <workItem from="1592356555670" duration="14011000" />
     </task>
+    <task id="LOCAL-00001" summary="test commit with intellij">
+      <created>1592214148806</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1592214148807</updated>
+    </task>
+    <task id="LOCAL-00002" summary="test commit with intellij">
+      <created>1592214167465</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1592214167465</updated>
+    </task>
+    <task id="LOCAL-00003" summary="test commit with intellij">
+      <created>1592214338068</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1592214338068</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="test commit with intellij" />
+    <option name="LAST_COMMIT_MESSAGE" value="test commit with intellij" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="278" y="59" width="800" height="684" key="#Auto_Import" timestamp="1591534738809">
+    <state x="278" y="59" width="800" height="684" key="#Auto_Import" timestamp="1592358179489">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="278" y="59" width="800" height="684" key="#Auto_Import/0.27.1366.741@0.27.1366.741" timestamp="1591534738809" />
+    <state x="278" y="59" width="800" height="684" key="#Auto_Import/0.27.1366.741@0.27.1366.741" timestamp="1592358179489" />
+    <state x="278" y="59" width="800" height="684" key="#Inspections" timestamp="1592331271054">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="278" y="59" width="800" height="684" key="#Inspections/0.27.1366.741@0.27.1366.741" timestamp="1592331271054" />
     <state x="278" y="59" width="847" height="684" key="#Project_Structure" timestamp="1587146587267">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
@@ -143,42 +225,46 @@
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="466" y="105" width="424" height="591" key="#com.intellij.ide.macro.MacrosDialog/0.27.1366.741@0.27.1366.741" timestamp="1587191027285" />
-    <state x="491" y="110" width="374" height="582" key="#com.intellij.ide.util.MemberChooser" timestamp="1591539753289">
+    <state x="491" y="110" width="374" height="582" key="#com.intellij.ide.util.MemberChooser" timestamp="1592321223162">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="491" y="110" width="374" height="582" key="#com.intellij.ide.util.MemberChooser/0.27.1366.741@0.27.1366.741" timestamp="1591539753289" />
-    <state x="416" y="146" width="524" height="509" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1587272195299">
+    <state x="491" y="110" width="374" height="582" key="#com.intellij.ide.util.MemberChooser/0.27.1366.741@0.27.1366.741" timestamp="1592321223162" />
+    <state x="416" y="146" width="524" height="509" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1592321188584">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="416" y="146" width="524" height="509" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1366.741@0.27.1366.741" timestamp="1587272195299" />
-    <state x="220" y="27" width="916" height="741" key="CommitChangelistDialog2" timestamp="1592214318277">
+    <state x="416" y="146" width="524" height="509" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1366.741@0.27.1366.741" timestamp="1592321188584" />
+    <state x="416" y="146" width="524" height="509" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1592338808439">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="220" y="27" width="916" height="741" key="CommitChangelistDialog2/0.27.1366.741@0.27.1366.741" timestamp="1592214318277" />
+    <state x="416" y="146" width="524" height="509" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.27.1366.741@0.27.1366.741" timestamp="1592338808439" />
+    <state x="220" y="27" width="916" height="741" key="CommitChangelistDialog2" timestamp="1592214337872">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="220" y="27" width="916" height="741" key="CommitChangelistDialog2/0.27.1366.741@0.27.1366.741" timestamp="1592214337872" />
     <state x="399" y="27" width="557" height="741" key="Diagram.Print.Preview.Dialog" timestamp="1591540011561">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="399" y="27" width="557" height="741" key="Diagram.Print.Preview.Dialog/0.27.1366.741@0.27.1366.741" timestamp="1591540011561" />
-    <state x="466" y="155" width="424" height="491" key="FileChooserDialogImpl" timestamp="1591540382580">
+    <state x="466" y="155" width="424" height="491" key="FileChooserDialogImpl" timestamp="1592337423156">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="466" y="155" width="424" height="491" key="FileChooserDialogImpl/0.27.1366.741@0.27.1366.741" timestamp="1591540382580" />
-    <state width="637" height="167" key="GridCell.Tab.0.bottom" timestamp="1591195267257">
+    <state x="466" y="155" width="424" height="491" key="FileChooserDialogImpl/0.27.1366.741@0.27.1366.741" timestamp="1592337423156" />
+    <state width="1320" height="123" key="GridCell.Tab.0.bottom" timestamp="1592378728135">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="637" height="167" key="GridCell.Tab.0.bottom/0.27.1366.741@0.27.1366.741" timestamp="1591195267257" />
-    <state width="637" height="167" key="GridCell.Tab.0.center" timestamp="1591195267256">
+    <state width="1320" height="123" key="GridCell.Tab.0.bottom/0.27.1366.741@0.27.1366.741" timestamp="1592378728135" />
+    <state width="1320" height="123" key="GridCell.Tab.0.center" timestamp="1592378728135">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="637" height="167" key="GridCell.Tab.0.center/0.27.1366.741@0.27.1366.741" timestamp="1591195267256" />
-    <state width="637" height="167" key="GridCell.Tab.0.left" timestamp="1591195267256">
+    <state width="1320" height="123" key="GridCell.Tab.0.center/0.27.1366.741@0.27.1366.741" timestamp="1592378728135" />
+    <state width="1320" height="123" key="GridCell.Tab.0.left" timestamp="1592378728135">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="637" height="167" key="GridCell.Tab.0.left/0.27.1366.741@0.27.1366.741" timestamp="1591195267256" />
-    <state width="637" height="167" key="GridCell.Tab.0.right" timestamp="1591195267256">
+    <state width="1320" height="123" key="GridCell.Tab.0.left/0.27.1366.741@0.27.1366.741" timestamp="1592378728135" />
+    <state width="1320" height="123" key="GridCell.Tab.0.right" timestamp="1592378728135">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="637" height="167" key="GridCell.Tab.0.right/0.27.1366.741@0.27.1366.741" timestamp="1591195267256" />
+    <state width="1320" height="123" key="GridCell.Tab.0.right/0.27.1366.741@0.27.1366.741" timestamp="1592378728135" />
     <state width="1320" height="215" key="GridCell.Tab.1.bottom" timestamp="1589636856617">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
@@ -203,22 +289,26 @@
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="172" y="31" width="1022" height="737" key="SettingsEditor/0.27.1366.741@0.27.1366.741" timestamp="1591540121049" />
-    <state x="278" y="133" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1592214174065">
+    <state x="278" y="133" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1592214340124">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="278" y="133" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1366.741@0.27.1366.741" timestamp="1592214174065" />
-    <state x="451" y="317" width="454" height="167" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1592214326574">
+    <state x="278" y="133" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1366.741@0.27.1366.741" timestamp="1592214340124" />
+    <state x="451" y="317" width="454" height="174" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1592214377721">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="451" y="317" width="454" height="167" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.1366.741@0.27.1366.741" timestamp="1592214326574" />
+    <state x="451" y="317" width="454" height="174" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.1366.741@0.27.1366.741" timestamp="1592214377721" />
+    <state x="82" y="138" width="710" height="520" key="find.popup" timestamp="1592368566890">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="82" y="138" width="710" height="520" key="find.popup/0.27.1366.741@0.27.1366.741" timestamp="1592368566890" />
     <state x="0" y="101" width="1356" height="599" key="new project wizard" timestamp="1589714965449">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="0" y="101" width="1356" height="599" key="new project wizard/0.27.1366.741@0.27.1366.741" timestamp="1589714965449" />
-    <state x="379" y="27" width="598" height="741" key="refactoring.ChangeSignatureDialog" timestamp="1587296384412">
+    <state x="379" y="27" width="598" height="741" key="refactoring.ChangeSignatureDialog" timestamp="1592339465761">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="379" y="27" width="598" height="741" key="refactoring.ChangeSignatureDialog/0.27.1366.741@0.27.1366.741" timestamp="1587296384412" />
+    <state x="379" y="27" width="598" height="741" key="refactoring.ChangeSignatureDialog/0.27.1366.741@0.27.1366.741" timestamp="1592339465761" />
     <state x="347" y="174" width="672" height="677" key="run.anything.popup" timestamp="1591184282656">
       <screen x="0" y="27" width="1366" height="741" />
     </state>

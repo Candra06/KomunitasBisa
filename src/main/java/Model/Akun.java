@@ -4,7 +4,6 @@ import Helper.ORM;
 
 import java.sql.ResultSet;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Map;
 
 public class Akun extends ORM {
@@ -23,6 +22,44 @@ public class Akun extends ORM {
         this.level = level;
         this.status = status;
         this.create_at = create_at;
+    }
+
+    public static ArrayList<Akun> getLogin(String email, String pass){
+        email = email.replaceAll("'", "").replaceAll(" ", "");
+        pass = pass.replaceAll("'", "").replaceAll(" ", "");
+        ResultSet rs = selectAll("akun", String.format("email = '%s' and password = '%s' and status='aktif'", email, pass));
+        ArrayList<Akun> akun = new ArrayList<Akun>();
+        try {
+            if (!rs.next()){
+                return null;
+            }else {
+                String email_ = rs.getString("email");
+                String password_ = rs.getString("password");
+                String level_ = rs.getString("level");
+                int id_akes_ = rs.getInt("id");
+                String status_ = rs.getString("status");
+                String create_at_ = rs.getString("create_at");
+                Akun akuns = new Akun(id_akes_, email_, password_,level_, status_, create_at_);
+                akun.add(akuns);
+                return akun;
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+
+    public static String getDataAdminKomunitas(int id_akun){
+        return null;
+    }
+
+    public static String getDataAdminSistem(int id_akun){
+        return null;
+    }
+
+    public static Akun getUser(){
+        return null;
     }
 
     public int getId_akses() {
@@ -73,9 +110,9 @@ public class Akun extends ORM {
         this.create_at = create_at;
     }
 
-    public static ArrayList<Users> getAkun(){
+    public static ArrayList<Akun> getAkun(){
         ResultSet resultSet = selectAll(TABLE);
-        ArrayList<Users> users = new ArrayList<Users>();
+        ArrayList<Akun> akun = new ArrayList<Akun>();
 //        try {
 //            while (resultSet.next()){
 //                String email =resultSet.getString("nama");
@@ -91,7 +128,20 @@ public class Akun extends ORM {
 //        }catch (Exception e){
 //            e.printStackTrace();
 //        }
-        return users;
+        return akun;
+    }
+
+    public static boolean InsertAkun(){
+        Map<String, String> data = null;
+        boolean hasil = insert(TABLE, data);
+        return hasil;
+    }
+
+    public static boolean UpdateAkun(){
+        Map<String, String> data = null;
+        String value= "";
+        boolean hasil = update(TABLE, data, value);
+        return hasil;
     }
 
 

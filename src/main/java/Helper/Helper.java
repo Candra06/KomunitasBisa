@@ -5,7 +5,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -34,8 +36,18 @@ public class Helper {
     }
 
     public static void closeWindow(Event event, Button buttonName){
-        Stage stage = (Stage) buttonName.getScene().getWindow();
-        stage.close();
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Pesan Konfirmasi");
+        alert.setContentText("Apakah anda yakin ingin keluar dari aplikasi?");
+        alert.showAndWait().ifPresent(type -> {
+            if (type == ButtonType.OK) {
+                Stage stage = (Stage) buttonName.getScene().getWindow();
+                stage.close();
+            } else if (type == ButtonType.NO) {
+                alert.close();
+            }
+        });
+
     }
 
     public static Connection connect(){
@@ -51,6 +63,26 @@ public class Helper {
             se.printStackTrace();
             System.out.println("Koneksi gagal");
             return null;
+        }
+    }
+
+    public static void alert(String message, String judul, String type){
+        String getTipe = "";
+        if (type == "sukses"){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle(judul);
+            alert.setContentText(message);
+            alert.showAndWait();
+        }else if (type == "gagal"){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle(judul);
+            alert.setContentText(message);
+            alert.showAndWait();
+        }else if (type == "info"){
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle(judul);
+            alert.setContentText(message);
+            alert.showAndWait();
         }
     }
 

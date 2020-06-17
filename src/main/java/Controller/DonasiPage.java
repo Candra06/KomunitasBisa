@@ -1,6 +1,7 @@
 package Controller;
 
 import Helper.Helper;
+import Model.Donasi;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -12,6 +13,7 @@ import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class DonasiPage implements Initializable{
@@ -37,6 +39,7 @@ public class DonasiPage implements Initializable{
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        dataDonasi();
         String data[] = {"Reboisasi untuk masa depan", "Menanam bakau demi kelestarian laut", "Gerakan bersih diri"};
         for (int i = 0; i < data.length; i++) {
             try {
@@ -47,5 +50,9 @@ public class DonasiPage implements Initializable{
                 System.out.println("Error gan "+e.getMessage());
             }
         }
+    }
+
+    public void dataDonasi(){
+        ArrayList<Donasi> data = Donasi.getDonasi();
     }
 }
