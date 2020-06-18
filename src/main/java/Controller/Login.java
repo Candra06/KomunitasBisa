@@ -1,6 +1,7 @@
 package Controller;
 
 import Helper.Helper;
+import Helper.UserSession;
 import Helper.ORM;
 import Model.Akun;
 import Model.Users;
@@ -24,12 +25,19 @@ import java.util.ArrayList;
 import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.Scanner;
+import java.util.prefs.Preferences;
 
 public class Login implements Initializable {
     public String Nama = "";
     public String LEVEL = "";
     public int ID = 0;
     public int ID_AKUN = 0;
+    public int ID_KOMUNITAS = 0;
+
+    DashboardKomunitas dbk = new DashboardKomunitas();
+    DashboardAdmin dba = new DashboardAdmin();
+    DashboardUser dbu = new DashboardUser();
+
     public JFXPasswordField getTxtPassword() {
         return txtPassword;
     }
@@ -63,6 +71,46 @@ public class Login implements Initializable {
     @FXML
     private JFXButton btnLogin;
 
+    public String getNama() {
+        return Nama;
+    }
+
+    public void setNama(String nama) {
+        Nama = nama;
+    }
+
+    public String getLEVEL() {
+        return LEVEL;
+    }
+
+    public void setLEVEL(String LEVEL) {
+        this.LEVEL = LEVEL;
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
+    public int getID_AKUN() {
+        return ID_AKUN;
+    }
+
+    public void setID_AKUN(int ID_AKUN) {
+        this.ID_AKUN = ID_AKUN;
+    }
+
+    public int getID_KOMUNITAS() {
+        return ID_KOMUNITAS;
+    }
+
+    public void setID_KOMUNITAS(int ID_KOMUNITAS) {
+        this.ID_KOMUNITAS = ID_KOMUNITAS;
+    }
+
     @FXML
     void btnCloseEvent(ActionEvent event) {
         Helper.closeWindow(event, this.btnClose);
@@ -89,27 +137,29 @@ public class Login implements Initializable {
                 try {
                     ResultSet resultSet = ORM.selectColumn("user", new String[]{"id, id_akun,nama"}, "id_akun="+id_akun);
                     resultSet.next();
-                    LEVEL = "User";
-                    Nama = resultSet.getString("nama");
-                    ID = resultSet.getInt("id");
-                    ID_AKUN = resultSet.getInt("id_akun");
+                    setLEVEL("User");
+                    setNama(resultSet.getString("nama"));
+                    setID(resultSet.getInt("id"));
+                    setID_AKUN(resultSet.getInt("id_akun"));
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
                 Helper.changePage(actionEvent, "dashboard_user");
             }else if (level.equals("admin_komunitas")){
                 try {
-                    ResultSet resultSet = ORM.selectColumn("pengurus", new String[]{"id, id_akun,nama"}, "id_akun="+id_akun);
+                    ResultSet resultSet = ORM.selectColumn("pengurus", new String[]{"id, id_akun,nama, id_komunitas"}, "id_akun="+id_akun);
                     resultSet.next();
-                    LEVEL = "Komunitas";
-                    Nama = resultSet.getString("nama");
-                    ID = resultSet.getInt("id");
-                    ID_AKUN = resultSet.getInt("id_akun");
+                    setLEVEL("Komunitas");
+                    Preferences userPreferences = Preferences.userRoot();
+                    userPreferences.put("nama",resultSet.getString("nama"));
+                    userPreferences.put("id_akun",resultSet.getString("id_akun"));
+                    userPreferences.put("id_komunitas",resultSet.getString("id_komunitas"));
+                    userPreferences.put("id",resultSet.getString("id"));
+                    Helper.alert("Selamat datang!", "Berhasil", "sukses");
+                    Helper.changePage(actionEvent, "dashboard_komunitas");
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
-                Helper.alert("Selamat datang!", "Berhasil", "sukses");
-                System.out.println("Selamat datang komunitas");
             }else if (level.equals("admin_sistem")){
                 try {
                     ResultSet resultSet = ORM.selectColumn("akun", new String[]{"id"}, "id_akun="+id_akun);

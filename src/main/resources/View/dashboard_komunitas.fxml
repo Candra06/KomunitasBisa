@@ -12,27 +12,29 @@
    <children>
       <Pane layoutY="-8.0" prefHeight="200.0" prefWidth="900.0" style="-fx-background-color: #6eecc6;">
          <children>
-            <Label layoutX="338.0" layoutY="56.0" text="Selamat datang!" textFill="WHITE">
+            <Label layoutX="316.0" layoutY="79.0" text="Selamat datang" textFill="WHITE">
                <font>
-                  <Font size="32.0" />
+                  <Font name="Ubuntu Bold" size="36.0" />
                </font>
             </Label>
-            <Label layoutX="339.0" layoutY="100.0" text="Admin Komunitas" textFill="WHITE">
+
+            <Label fx:id="txtNama" alignment="CENTER" layoutY="131.0" prefHeight="32.0" prefWidth="900.0" text="Admin Komunitas" textAlignment="CENTER" textFill="WHITE">
                <font>
-                  <Font size="30.0" />
+                  <Font name="Ubuntu" size="28.0" />
                </font></Label>
             <JFXButton fx:id="btnClose" contentDisplay="GRAPHIC_ONLY" layoutX="861.0" layoutY="10.0" onAction="#btnCloseOnClick">
                <graphic>
                   <ImageView fitHeight="42.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Assets/Image/close.png" />
+                        <Image url="@../Assets/Image/exit.png" />
                      </image>
                   </ImageView>
                </graphic>
             </JFXButton>
+
          </children>
       </Pane>
-      <JFXButton fx:id="btnEvent" contentDisplay="TOP" layoutX="136.0" layoutY="212.0" onAction="#btnEventOnClick" prefHeight="175.0" prefWidth="175.0" style="-fx-background-color: #6eecc6; -fx-background-radius: 10px;" text="Event" textFill="WHITE">
+      <JFXButton fx:id="btnEvent" contentDisplay="TOP" layoutX="136.0" layoutY="222.0" onAction="#btnEventOnClick" prefHeight="160.0" prefWidth="160.0" style="-fx-background-color: #f2be75; -fx-background-radius: 10px;" text="Event" textFill="WHITE">
          <graphic>
             <ImageView fitHeight="90.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -44,7 +46,7 @@
             <Font size="16.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="btnDonasi" contentDisplay="TOP" layoutX="362.0" layoutY="406.0" onAction="#btnDonasiOnClick" prefHeight="175.0" prefWidth="175.0" style="-fx-background-color: #6eecc6; -fx-background-radius: 10px;" text="Donasi" textFill="WHITE">
+      <JFXButton fx:id="btnDonasi" contentDisplay="TOP" layoutX="362.0" layoutY="416.0" onAction="#btnDonasiOnClick" prefHeight="160.0" prefWidth="160.0" style="-fx-background-color: #75f281; -fx-background-radius: 10px;" text="Donasi" textFill="WHITE">
          <graphic>
             <ImageView fitHeight="90.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -56,7 +58,7 @@
             <Font size="16.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="btnVolunteer" contentDisplay="TOP" layoutX="136.0" layoutY="405.0" onAction="#btnVolunteerOnClick" prefHeight="175.0" prefWidth="175.0" style="-fx-background-color: #6eecc6; -fx-background-radius: 10px;" text="Volunteer" textFill="WHITE">
+      <JFXButton fx:id="btnVolunteer" contentDisplay="TOP" layoutX="136.0" layoutY="415.0" onAction="#btnVolunteerOnClick" prefHeight="160.0" prefWidth="160.0" style="-fx-background-color: #f2ee75; -fx-background-radius: 10px;" text="Volunteer" textFill="WHITE">
          <graphic>
             <ImageView fitHeight="90.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -68,7 +70,7 @@
             <Font size="16.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="btnKomunitas" contentDisplay="TOP" layoutX="587.0" layoutY="213.0" onAction="#btnKomunitasOnClick" prefHeight="175.0" prefWidth="175.0" style="-fx-background-color: #6eecc6; -fx-background-radius: 10px;" text="Komunitas" textFill="WHITE">
+      <JFXButton fx:id="btnKomunitas" contentDisplay="TOP" layoutX="587.0" layoutY="223.0" onAction="#btnKomunitasOnClick" prefHeight="160.0" prefWidth="160.0" style="-fx-background-color: #f275ee; -fx-background-radius: 10px;" text="Komunitas" textFill="WHITE">
          <graphic>
             <ImageView fitHeight="90.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -80,7 +82,7 @@
             <Font size="16.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="btnAdmin" contentDisplay="TOP" layoutX="363.0" layoutY="213.0" onAction="#btnAdminOnClick" prefHeight="175.0" prefWidth="175.0" style="-fx-background-color: #6eecc6; -fx-background-radius: 10px;" text="Admin" textFill="WHITE">
+      <JFXButton fx:id="btnAdmin" contentDisplay="TOP" layoutX="363.0" layoutY="223.0" onAction="#btnAdminOnClick" prefHeight="160.0" prefWidth="160.0" style="-fx-background-color: #75adf2; -fx-background-radius: 10px;" text="Admin" textFill="WHITE">
          <graphic>
             <ImageView fitHeight="90.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -92,7 +94,7 @@
             <Font size="16.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="btnProfil" contentDisplay="TOP" layoutX="587.0" layoutY="411.0" onAction="#btnProfilbtnProfil" prefHeight="175.0" prefWidth="175.0" style="-fx-background-color: #6eecc6; -fx-background-radius: 10px;" text="Profil" textFill="WHITE">
+      <JFXButton fx:id="btnProfil" contentDisplay="TOP" layoutX="587.0" layoutY="421.0" onAction="#btnProfilbtnProfil" prefHeight="160.0" prefWidth="160.0" style="-fx-background-color: #6eecc6; -fx-background-radius: 10px;" text="Profil" textFill="WHITE">
          <graphic>
             <ImageView fitHeight="90.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
                <image>

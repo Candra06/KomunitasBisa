@@ -74,14 +74,14 @@ public class Users extends ORM {
         return users;
     }
 
-    public static boolean insertAkun(String email, String password){
+    public static boolean insertAkun(String email, String password, String level){
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Date date = new Date();
         String create_at = format.format(date);
         Map<String, String> data = new HashMap<String, String>();
         data.put("email", "'"+email+"'");
         data.put("password", "'"+password+"'");
-        data.put("level", "'user'");
+        data.put("level", "'"+level+"'");
         data.put("status", "'aktif'");
         data.put("create_at", "'"+create_at+"'");
         boolean hasil = insert("akun", data);

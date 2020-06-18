@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXMasonryPane?>
 <?import com.jfoenix.controls.JFXTextArea?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AddEvent">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AddEvent">
     <children>
         <Pane prefHeight="608.0" prefWidth="355.0" style="-fx-background-color: #6eecc6;">
             <children>
@@ -36,25 +36,26 @@
             </children>
         </Pane>
 
-        <JFXButton fx:id="btnClose" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="830.0" layoutY="-1.0" onAction="#btnCloseOnClick" prefHeight="30.0" prefWidth="20.0">
+        <JFXButton fx:id="btnClose" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="858.0" layoutY="7.0" onAction="#btnCloseOnClick" prefHeight="30.0" prefWidth="20.0">
          <graphic>
-                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@../Assets/Image/close_green.png" />
+                        <Image url="@../Assets/Image/exit_primary.png" />
                     </image>
                 </ImageView>
          </graphic></JFXButton>
 
-        <Pane fx:id="paneKomunitas1" layoutX="359.0" layoutY="36.0" prefHeight="560.0" prefWidth="513.0" style="-fx-background-color: #fff;">
+        <Pane fx:id="paneKomunitas1" layoutX="371.0" layoutY="36.0" prefHeight="560.0" prefWidth="513.0" style="-fx-background-color: #fff;">
             <children>
                 <JFXTextField fx:id="txtNamaKomuitas" focusColor="#6eecc6" layoutX="39.0" layoutY="84.0" prefHeight="26.0" prefWidth="435.0" promptText="Nama Event" style="-fx-prompt-text-fill: #908e8e;" unFocusColor="#908e8e" />
                 <JFXTextArea fx:id="txtDeskripsi" focusColor="#6eecc6" layoutX="39.0" layoutY="192.0" prefHeight="64.0" prefWidth="435.0" promptText="Deskripsi Event dan Syarat Volunteer" style="-fx-prompt-text-fill: #908e8e;" unFocusColor="#908e8e" />
-                <JFXButton fx:id="btnUploadLogo" layoutX="39.0" layoutY="397.0" onAction="#btnUploasOnClick" prefHeight="40.0" prefWidth="190.0" style="-fx-border-radius: 10px; -fx-background-color: #c9c7c9;" text="POSTER EVENT" textFill="#4d4d4d" />
-                <Label layoutX="53.0" layoutY="40.0" text="Lengkapi data Events berikut" textFill="#908e8e" />
-                <JFXButton fx:id="btnNextLevel" layoutX="193.0" layoutY="496.0" onAction="#btnNextOnClick" prefHeight="40.0" prefWidth="181.0" style="-fx-border-radius: 10px; -fx-background-color: #6eecc6; -fx-background-radius: 10px;" text="SIMPAN" textFill="WHITE" />
-            <JFXDatePicker layoutX="39.0" layoutY="139.0" prefHeight="29.0" prefWidth="435.0" promptText="Tanggal Events" />
-            <JFXTextField fx:id="txtNamaKomuitas1" focusColor="#6eecc6" layoutX="39.0" layoutY="280.0" prefHeight="26.0" prefWidth="435.0" promptText="Jumlah Volunteer" style="-fx-prompt-text-fill: #908e8e;" unFocusColor="#908e8e" />
-            <JFXTextField fx:id="txtNamaKomuitas11" focusColor="#6eecc6" layoutX="39.0" layoutY="340.0" prefHeight="26.0" prefWidth="435.0" promptText="Jumlah Donasi" style="-fx-prompt-text-fill: #908e8e;" unFocusColor="#908e8e" />
+                <JFXButton fx:id="btnUploadLogo" layoutX="39.0" layoutY="397.0" onAction="#btnUploasOnClick" prefHeight="40.0" prefWidth="134.0" style="-fx-border-radius: 10px; -fx-background-color: #c9c7c9;" text="POSTER EVENT" textFill="#4d4d4d" />
+                <Label layoutX="39.0" layoutY="37.0" text="Lengkapi data Events berikut" textFill="#908e8e" />
+                <JFXButton fx:id="btnSimpan" layoutX="193.0" layoutY="496.0" onAction="#btnSimpanOnclick" prefHeight="40.0" prefWidth="181.0" style="-fx-border-radius: 10px; -fx-background-color: #6eecc6; -fx-background-radius: 10px;" text="SIMPAN" textFill="WHITE" />
+            <JFXTextField fx:id="txtJmlhVolunteer" focusColor="#6eecc6" layoutX="39.0" layoutY="280.0" prefHeight="26.0" prefWidth="435.0" promptText="Jumlah Volunteer" style="-fx-prompt-text-fill: #908e8e;" unFocusColor="#908e8e" />
+            <JFXTextField fx:id="txtJumlahDonasi" focusColor="#6eecc6" layoutX="39.0" layoutY="340.0" prefHeight="26.0" prefWidth="435.0" promptText="Jumlah Donasi" style="-fx-prompt-text-fill: #908e8e;" unFocusColor="#908e8e" />
+            <DatePicker fx:id="tglEvent" layoutX="39.0" layoutY="142.0" prefHeight="35.0" prefWidth="435.0" promptText="Tanggal Event" />
+            <Label fx:id="txtNameImage" layoutX="205.0" layoutY="409.0" text="Pilih foto poster" textFill="#908e8e" />
             </children>
         </Pane>
         

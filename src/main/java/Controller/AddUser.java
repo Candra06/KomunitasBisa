@@ -73,7 +73,7 @@ public class AddUser implements Initializable {
         }
     }
     void simpanAkun(){
-        boolean status = Users.insertAkun(txtEmailUser.getText(), txtPasswordUser.getText());
+        boolean status = Users.insertAkun(txtEmailUser.getText(), txtPasswordUser.getText(), "user");
         if (status == true){
             simpanUser();
         }else {

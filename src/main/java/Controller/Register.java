@@ -172,7 +172,7 @@ public class Register implements Initializable {
         }
     }
     void simpanAkun(){
-        boolean status = Users.insertAkun(txtEmailUser.getText(), txtPasswordUser.getText());
+        boolean status = Users.insertAkun(txtEmailUser.getText(), txtPasswordUser.getText(), "user");
         if (status == true){
             simpanUser();
         }else {
@@ -191,7 +191,7 @@ public class Register implements Initializable {
 
     void simpanAkunKetua(){
         String email = txtNoHPKetua.getText();
-        boolean status = Users.insertAkun(email, "adminkomunitasbisa123");
+        boolean status = Users.insertAkun(email, "adminkomunitasbisa123", "admin_komunitas");
         if (status == true){
             simpanKetua();
         }else {
@@ -229,7 +229,7 @@ public class Register implements Initializable {
 
     void simpanAkunWakil(){
         String email = txtNoHPWakil.getText();
-        boolean status = Users.insertAkun(email, "adminkomunitasbisa123");
+        boolean status = Users.insertAkun(email, "adminkomunitasbisa123", "admin_komunitas");
         if (status == true){
             simpanWakil();
         }else {
@@ -239,7 +239,7 @@ public class Register implements Initializable {
 
     void simpanAkunSekertaris(){
         String email = txtNoHPSekertaris.getText();
-        boolean status = Users.insertAkun(email, "adminkomunitasbisa123");
+        boolean status = Users.insertAkun(email, "adminkomunitasbisa123", "admin_komunitas");
         if (status == true){
             simpanSekertaris();
         }else {
@@ -249,7 +249,7 @@ public class Register implements Initializable {
 
     void simpanAkunBendahara(){
         String email = txtNoHPBendahara.getText();
-        boolean status = Users.insertAkun(email, "adminkomunitasbisa123");
+        boolean status = Users.insertAkun(email, "adminkomunitasbisa123", "admin_komunitas");
         if (status == true){
             simpanBendahara();
         }else {

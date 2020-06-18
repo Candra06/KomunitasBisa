@@ -34,28 +34,38 @@
         </Pane>
         <Pane prefHeight="600.0" prefWidth="354.0" style="-fx-background-color: #6eecc6;">
             <children>
+                <JFXButton fx:id="btnBack" layoutX="8.0" layoutY="5.0" onAction="#btnBackPageOnClick" text="Kembali" textFill="#fffefe" textOverrun="CENTER_ELLIPSIS">
+                    <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../Assets/Image/arrow.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </JFXButton>
                 <Label layoutX="57.0" layoutY="154.0" text="Tambah User" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="32.0" />
                     </font>
                 </Label>
+
                 <Label layoutX="19.0" layoutY="194.0" prefHeight="82.0" prefWidth="316.0" text="Tambahka data user dan lengkapi form yang tersedia dengan benar." textAlignment="CENTER" textFill="WHITE" wrapText="true" />
                 <JFXButton fx:id="btnShowData" layoutX="91.0" layoutY="300.0" onAction="#btnShowDataOnClick" prefHeight="48.0" prefWidth="169.0" style="-fx-border-color: #fff; -fx-border-radius: 10px; -fx-background-color: #6eecc6; -fx-background-radius: 10px;" text="Lihat Data" textFill="WHITE">
                     <font>
                         <Font size="16.0" />
                     </font></JFXButton>
-                <ImageView fitHeight="82.0" fitWidth="200.0" layoutX="19.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="48.0" fitWidth="169.0" layoutX="219.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../Assets/Image/Logowht.png" />
                     </image>
                 </ImageView>
             </children>
         </Pane>
-        <JFXButton fx:id="btnClose" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="852.0" layoutY="3.0" onAction="#btnCloseOnClick" prefHeight="30.0" prefWidth="20.0">
+        <JFXButton fx:id="btnClose" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="862.0" layoutY="3.0" onAction="#btnCloseOnClick" prefHeight="30.0" prefWidth="20.0">
             <graphic>
                 <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@../Assets/Image/close_green.png" />
+                        <Image url="@../Assets/Image/exit_primary.png" />
                     </image>
                 </ImageView>
             </graphic>

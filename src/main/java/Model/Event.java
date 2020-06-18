@@ -126,7 +126,7 @@ public class Event extends ORM{
         return event;
     }
 
-    public static boolean InsertEvent(int id_komunitas,String judul, String tanggal, String deskripsi, int jml_donasi, int jml_volunteer){
+    public static boolean InsertEvent(int id_komunitas,String judul, String tanggal, String deskripsi, int jml_donasi, int jml_volunteer, String poster){
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Date date = new Date();
         String create_at = format.format(date);
@@ -137,7 +137,8 @@ public class Event extends ORM{
         data.put("tanggal", "'"+tanggal+"'");
         data.put("deskripsi", "'"+deskripsi+"'");
         data.put("jmlh_donasi", "'"+jml_donasi+"'");
-        data.put("jmlh_volunteere", "'"+jml_volunteer+"'");
+        data.put("jmlh_volunteer", "'"+jml_volunteer+"'");
+        data.put("poster", "'"+poster+"'");
         data.put("status", "'on_going'");
         data.put("create_at", "'"+create_at+"'");
         data.put("update_at", "'"+create_at+"'");

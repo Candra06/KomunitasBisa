@@ -63,7 +63,7 @@ public class ORM {
         values += ") ";
 
         String sql = "INSERT INTO " + columns + values;
-//        System.out.println(sql);
+        System.out.println(sql);
         try {
             Statement statement = Helper.connect().createStatement();
             return statement.executeUpdate(sql) > 0;
