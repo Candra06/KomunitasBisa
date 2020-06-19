@@ -157,7 +157,7 @@ public class Login implements Initializable {
                 }
             }else if (level.equals("admin_sistem")){
                 try {
-                    ResultSet resultSet = ORM.selectColumn("akun", new String[]{"id"}, "id_akun="+id_akun);
+                    ResultSet resultSet = ORM.selectColumn("akun", new String[]{"id"}, "id="+id_akun);
                     resultSet.next();
                     Preferences userPreferences = Preferences.userRoot();
                     userPreferences.put("nama", "Admin");
@@ -167,7 +167,7 @@ public class Login implements Initializable {
                     e.printStackTrace();
                 }
                 Helper.alert("Selamat datang!", "Berhasil", "sukses");
-                System.out.println("Selamat datang admin");
+                Helper.changePage(actionEvent,"dashboard_admin");
             }else {
                 Helper.alert("Level tidak ditemukan!", "Warning", "info");
             }

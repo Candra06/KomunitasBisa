@@ -18,7 +18,7 @@ import java.sql.SQLException;
 public class Helper {
 
     private static final String USERNAME = "root";
-    private static final String PASSWORD = "bismillah5758";
+    private static final String PASSWORD = "";
 
     public static void changePage(Event event, String page){
         Node node = (Node) event.getSource();
