@@ -24,7 +24,7 @@ public class Users extends ORM {
     private String pekerjaan;
     private String alamat;
 
-    public Users(String s, String nama, String gender, String telepon, String pekerjaan, String alamat) {
+    public Users( String nama, String gender, String telepon, String pekerjaan, String alamat, String status) {
         this.nama = nama;
         this.gender = gender;
         this.telepon = telepon;
