@@ -18,12 +18,8 @@ public class AddDonasiUser {
     @FXML
     private JFXButton btnClose;
 
-//    @FXML
-//    void btnCloseOnClick(ActionEvent event) {
-//
-//    }
+    public void btnSimpanUserOnClick(ActionEvent actionEvent) {
 
-        public void btnSimpanUserOnClick(ActionEvent actionEvent) {
     }
 
     public void btnCloseOnClick(ActionEvent actionEvent) {

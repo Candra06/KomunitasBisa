@@ -2,6 +2,8 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
@@ -10,6 +12,20 @@
     <children>
         <Pane layoutX="-2.0" prefHeight="608.0" prefWidth="350.0" style="-fx-background-color: #6eecc6;">
             <children>
+                <JFXButton fx:id="btnBack" layoutX="10.0" layoutY="5.0" onAction="#btnBackPageOnClick" text="Kembali" textFill="#fffefe" textOverrun="CENTER_ELLIPSIS">
+                    <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../Assets/Image/arrow.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </JFXButton>
+                <ImageView fitHeight="54.0" fitWidth="188.0" layoutX="199.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../Assets/Image/Logowht.png" />
+                    </image>
+                </ImageView>
                 <Label layoutX="30.0" layoutY="128.0" text="Profil Komunitas" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="32.0" />
@@ -21,58 +37,58 @@
             </children>
         </Pane>
 
-<!--        <Pane fx:id="paneKomunitas1" layoutX="350.0" prefHeight="608.0" prefWidth="550.0" style="-fx-background-color: #fff;">-->
-<!--            <children>-->
-<!--                <Label layoutX="53.0" layoutY="65.0" text="Informasi mengenai detail komunitas" textFill="#908e8e" />-->
-<!--                <JFXButton fx:id="btnNextLevel" layoutX="193.0" layoutY="555.0" onAction="#btnNextOnClick" prefHeight="40.0" prefWidth="181.0" style="-fx-border-radius: 10px; -fx-background-color: #6eecc6; -fx-background-radius: 10px;" text="SELANJUTNYA" textFill="WHITE" />-->
-<!--                <Pane layoutX="50.0" layoutY="119.0" prefHeight="48.0" prefWidth="200.0" style="-fx-background-color: #6eecc6; -fx-background-radius: 10px 10px 0px 0px;">-->
-<!--                    <children>-->
-<!--                        <Label fx:id="tabLangkah1" layoutX="44.0" layoutY="15.0" text="Data Komunitas" textFill="WHITE">-->
-<!--                            <font>-->
-<!--                                <Font size="14.0" />-->
-<!--                            </font>-->
-<!--                        </Label>-->
-<!--                    </children>-->
-<!--                </Pane>-->
-<!--                <Pane fx:id="tabLangkah2" layoutX="303.0" layoutY="119.0" prefHeight="48.0" prefWidth="200.0" style="-fx-background-color: #eaeaec; -fx-background-radius: 10px 10px 0px 0px;">-->
-<!--                    <children>-->
-<!--                        <Label layoutX="47.0" layoutY="15.0" text="Profil Pengurus" textFill="#908e8e">-->
-<!--                            <font>-->
-<!--                                <Font size="14.0" />-->
-<!--                            </font>-->
-<!--                        </Label>-->
-<!--                    </children>-->
-<!--                </Pane>-->
-<!--            <Label layoutX="53.0" layoutY="189.0" text="Nama Komunitas" textFill="#908e8e">-->
-<!--               <font>-->
-<!--                  <Font name="System Bold" size="13.0" />-->
-<!--               </font>-->
-<!--            </Label>-->
-<!--            <Label layoutX="53.0" layoutY="217.0" text="Nama Komunitas" textFill="#908e8e" />-->
-<!--            <Label layoutX="53.0" layoutY="255.0" text="Visi" textFill="#908e8e">-->
-<!--               <font>-->
-<!--                  <Font name="System Bold" size="13.0" />-->
-<!--               </font>-->
-<!--            </Label>-->
-<!--            <Label layoutX="53.0" layoutY="278.0" text="Visi" textFill="#908e8e" />-->
-<!--            <Label layoutX="53.0" layoutY="340.0" text="Misi" textFill="#908e8e">-->
-<!--               <font>-->
-<!--                  <Font name="System Bold" size="13.0" />-->
-<!--               </font>-->
-<!--            </Label>-->
-<!--            <Label layoutX="53.0" layoutY="366.0" text="Misi" textFill="#908e8e" />-->
-<!--            <Label layoutX="53.0" layoutY="438.0" text="Deskripsi" textFill="#908e8e">-->
-<!--               <font>-->
-<!--                  <Font name="System Bold" size="13.0" />-->
-<!--               </font>-->
-<!--            </Label>-->
-<!--            <Label layoutX="53.0" layoutY="460.0" text="Deskripsi" textFill="#908e8e" />-->
-<!--            </children>-->
-<!--        </Pane>-->
+        <Pane fx:id="paneKomunitas1" layoutX="350.0" prefHeight="608.0" prefWidth="550.0" style="-fx-background-color: #fff;">
+            <children>
+                <Label layoutX="53.0" layoutY="55.0" text="Informasi mengenai detail komunitas" textFill="#908e8e" />
+                <JFXButton fx:id="btnNextLevel" layoutX="193.0" layoutY="555.0" onAction="#btnNextOnClick" prefHeight="40.0" prefWidth="181.0" style="-fx-border-radius: 10px; -fx-background-color: #6eecc6; -fx-background-radius: 10px;" text="SELANJUTNYA" textFill="WHITE" />
+                <Pane layoutX="50.0" layoutY="119.0" prefHeight="48.0" prefWidth="200.0" style="-fx-background-color: #6eecc6; -fx-background-radius: 10px 10px 0px 0px;">
+                    <children>
+                        <Label fx:id="tabLangkah1" layoutX="44.0" layoutY="15.0" text="Data Komunitas" textFill="WHITE">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+                <Pane fx:id="tabLangkah2" layoutX="303.0" layoutY="119.0" prefHeight="48.0" prefWidth="200.0" style="-fx-background-color: #eaeaec; -fx-background-radius: 10px 10px 0px 0px;">
+                    <children>
+                        <Label layoutX="47.0" layoutY="15.0" text="Profil Pengurus" textFill="#908e8e">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+            <Label layoutX="53.0" layoutY="189.0" text="Nama Komunitas" textFill="#908e8e">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="txtNamaKomunitas" layoutX="53.0" layoutY="217.0" text="Nama Komunitas" textFill="#908e8e" />
+            <Label layoutX="53.0" layoutY="255.0" text="Visi" textFill="#908e8e">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="txtVisi" layoutX="53.0" layoutY="278.0" text="Visi" textFill="#908e8e" />
+            <Label layoutX="53.0" layoutY="340.0" text="Misi" textFill="#908e8e">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="txtMisi" layoutX="53.0" layoutY="366.0" text="Misi" textFill="#908e8e" />
+            <Label layoutX="53.0" layoutY="438.0" text="Deskripsi" textFill="#908e8e">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="txtDeskripsi" layoutX="53.0" layoutY="460.0" text="Deskripsi" textFill="#908e8e" />
+            </children>
+        </Pane>
         <Pane fx:id="paneKomunitas2" layoutX="350.0" prefHeight="608.0" prefWidth="550.0" style="-fx-background-color: #fff;">
             <children>
                 <Label layoutX="53.0" layoutY="65.0" text="Detail profil data komunitas" textFill="#908e8e" />
-                <Pane fx:id="tabLangkah1Done" layoutX="50.0" layoutY="119.0" prefHeight="48.0" prefWidth="200.0" style="-fx-background-color: #eaeaec; -fx-background-radius: 10px 10px 0px 0px;">
+                <Pane fx:id="tabLangkah1Done" layoutX="50.0" layoutY="119.0" onMouseClicked="#tab1Clicked" prefHeight="48.0" prefWidth="200.0" style="-fx-background-color: #eaeaec; -fx-background-radius: 10px 10px 0px 0px;">
                     <children>
                         <Label layoutX="43.0" layoutY="15.0" text="Profil Komunitas" textFill="#908e8e">
                             <font>
@@ -81,7 +97,7 @@
                         </Label>
                     </children>
                 </Pane>
-                <Pane fx:id="tabLangkah2Go" layoutX="303.0" layoutY="119.0" prefHeight="48.0" prefWidth="200.0" style="-fx-background-color: #6eecc6; -fx-background-radius: 10px 10px 0px 0px;">
+                <Pane fx:id="tabLangkah2Go" layoutX="303.0" layoutY="119.0" onMouseClicked="#tab2Clicked" prefHeight="48.0" prefWidth="200.0" style="-fx-background-color: #6eecc6; -fx-background-radius: 10px 10px 0px 0px;">
                     <children>
                         <Label layoutX="48.0" layoutY="15.0" text="Data Pengurus" textFill="WHITE">
                             <font>
@@ -90,44 +106,54 @@
                         </Label>
                     </children>
                 </Pane>
-            <Label layoutX="53.0" layoutY="205.0" text="Profil Ketua">
+                <JFXButton fx:id="btnBackLevel" layoutX="193.0" layoutY="555.0" onAction="#btnBackLevelOnClick" prefHeight="40.0" prefWidth="181.0" style="-fx-border-radius: 10px; -fx-background-color: #6eecc6; -fx-background-radius: 10px;" text="KEMBALI" textFill="WHITE" />
+            <Label layoutX="53.0" layoutY="190.0" text="Profil Ketua">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
-            <Label layoutX="53.0" layoutY="233.0" text="Nama" />
-            <Label layoutX="53.0" layoutY="261.0" text="Nomor HP Ketua" />
-            <Label layoutX="196.0" layoutY="234.0" text="Ketua" />
-            <Label layoutX="196.0" layoutY="262.0" text="08983368286" />
-            <Label layoutX="53.0" layoutY="304.0" text="Profil Wakil Ketua">
+            <Label layoutX="53.0" layoutY="218.0" text="Nama" />
+            <Label layoutX="53.0" layoutY="246.0" text="Nomor HP Ketua" />
+            <Label fx:id="txtNamaKetua" layoutX="196.0" layoutY="219.0" text="Ketua" />
+            <Label fx:id="txtHpKetua" layoutX="196.0" layoutY="247.0" text="08983368286" />
+            <Label layoutX="53.0" layoutY="281.0" text="Profil Wakil Ketua">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
-            <Label layoutX="53.0" layoutY="332.0" text="Nama" />
-            <Label layoutX="53.0" layoutY="360.0" text="Nomor HP Ketua" />
-            <Label layoutX="196.0" layoutY="333.0" text="Wakil Ketua" />
-            <Label layoutX="196.0" layoutY="361.0" text="08983368286" />
-            <Label layoutX="53.0" layoutY="392.0" text="Profil Sekertaris">
+            <Label layoutX="53.0" layoutY="309.0" text="Nama" />
+            <Label layoutX="53.0" layoutY="337.0" text="Nomor HP Ketua" />
+            <Label fx:id="txtNamaWakil" layoutX="196.0" layoutY="310.0" text="Wakil Ketua" />
+            <Label fx:id="txtHpWakil" layoutX="196.0" layoutY="338.0" text="08983368286" />
+            <Label layoutX="53.0" layoutY="369.0" text="Profil Sekertaris">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
-            <Label layoutX="53.0" layoutY="420.0" text="Nama" />
-            <Label layoutX="53.0" layoutY="448.0" text="Nomor HP Ketua" />
-            <Label layoutX="196.0" layoutY="421.0" text="Sekertaris" />
-            <Label layoutX="196.0" layoutY="449.0" text="08983368286" />
-            <Label layoutX="53.0" layoutY="482.0" text="Profil Bendahara">
+            <Label layoutX="53.0" layoutY="397.0" text="Nama" />
+            <Label layoutX="53.0" layoutY="425.0" text="Nomor HP Ketua" />
+            <Label fx:id="txtNamaSekertaris" layoutX="196.0" layoutY="398.0" text="Sekertaris" />
+            <Label fx:id="txtHpSekertaris" layoutX="196.0" layoutY="426.0" text="08983368286" />
+            <Label layoutX="53.0" layoutY="459.0" text="Profil Bendahara">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
-            <Label layoutX="53.0" layoutY="510.0" text="Nama" />
-            <Label layoutX="53.0" layoutY="538.0" text="Nomor HP Ketua" />
-            <Label layoutX="196.0" layoutY="511.0" text="Bendahara" />
-            <Label layoutX="196.0" layoutY="539.0" text="08983368286" />
+            <Label layoutX="53.0" layoutY="487.0" text="Nama" />
+            <Label layoutX="53.0" layoutY="515.0" text="Nomor HP Ketua" />
+            <Label fx:id="txtNamaBendahara" layoutX="196.0" layoutY="488.0" text="Bendahara" />
+            <Label fx:id="txtHpBendahara" layoutX="196.0" layoutY="516.0" text="08983368286" />
             </children>
         </Pane>
+          <JFXButton fx:id="btnClose" contentDisplay="GRAPHIC_ONLY" layoutX="857.0" layoutY="7.0" onAction="#btnCloseEvent" prefHeight="27.0" prefWidth="28.0" text=" ">
+              <graphic>
+                  <ImageView fitHeight="18.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                          <Image url="@../Assets/Image/exit_primary.png" />
+                      </image>
+                  </ImageView>
+              </graphic>
+          </JFXButton>
     </children>
 
 </AnchorPane>

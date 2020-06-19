@@ -4,7 +4,9 @@ import Helper.ORM;
 
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
+import java.util.prefs.Preferences;
 
 public class Akun extends ORM {
     private static final String TABLE = "akun";
@@ -48,6 +50,29 @@ public class Akun extends ORM {
         }
         return null;
     }
+
+    public static Map getInfoAdminKomunitas(){
+        Map<String, String> hasil = null;
+        int id_akun = 0;
+        int id_komunitas = 0;
+        Preferences pref = Preferences.userRoot();
+        id_akun = pref.getInt("id_akun", id_akun);
+        id_komunitas = pref.getInt("id_komunitas", id_komunitas);
+        ResultSet rs = ORM.selectAll("pengurus", "pengurus.id_akun="+id_akun, TABLE, "id_akun");
+        try {
+            rs.next();
+            Map<String, String> data = new HashMap<String, String>();
+            data.put("nama", rs.getString("nama"));
+            data.put("telepon", rs.getString("telepon"));
+            data.put("email", rs.getString("email"));
+            hasil = data;
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        System.out.println(hasil);
+        return hasil;
+    }
+
 
 
     public static String getDataAdminKomunitas(int id_akun){

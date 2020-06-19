@@ -122,6 +122,23 @@ public class Komunitas extends ORM{
         return komunitas;
     }
 
+    public ArrayList<Komunitas> getDetailKomuitas(int id){
+        ResultSet resultSet = selectAll(TABLE, String.format("id=%s", id));
+        ArrayList<Komunitas> komunitas = new ArrayList<Komunitas>();
+        try {
+//            while (resultSet.next()){
+//                String nama_komunitas = resultSet.getString("nama_komunitas");
+//                String visi = resultSet.getString("visi");
+//                String misi = resultSet.getString("misi");
+//                String deskripsi = resultSet.getString("deskripsi");
+//                Komunitas komunitas_ = new Komunitas();
+//            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return komunitas;
+    }
+
     public static boolean InsertKomunitas(String nama, String visi, String misi, String deskripsi, String logo){
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Date date = new Date();

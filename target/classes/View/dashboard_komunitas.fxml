@@ -18,7 +18,7 @@
                </font>
             </Label>
 
-            <Label fx:id="txtNama" layoutX="335.0" layoutY="131.0" text="Admin Komunitas" textFill="WHITE">
+            <Label fx:id="txtNama" alignment="CENTER" layoutY="131.0" prefHeight="32.0" prefWidth="900.0" text="Admin Komunitas" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Ubuntu" size="28.0" />
                </font></Label>

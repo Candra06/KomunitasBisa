@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.prefs.Preferences;
 
 public class Users extends ORM {
     private static final String TABLE = "user";
@@ -109,6 +110,7 @@ public class Users extends ORM {
         boolean hasil = insert(TABLE, data);
         return hasil;
     }
+
 
     public String getNama() {
         return nama;

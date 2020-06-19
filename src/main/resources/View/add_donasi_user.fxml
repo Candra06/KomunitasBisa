@@ -11,9 +11,9 @@
     <children>
         <Pane prefHeight="62.0" prefWidth="379.0" style="-fx-background-color: #6eecc6;">
             <children>
-                <Label layoutX="85.0" layoutY="14.0" text="Tambah Donasi" textFill="WHITE">
+                <Label layoutX="102.0" layoutY="17.0" text="Tambah Donasi" textFill="WHITE">
                     <font>
-                        <Font name="System Bold" size="24.0" />
+                        <Font name="Ubuntu Bold" size="24.0" />
                     </font>
                 </Label>
             <JFXButton fx:id="btnSimpanUser2" layoutX="345.0" layoutY="-1.0" onAction="#btnSimpanUserOnClick" prefHeight="26.0" prefWidth="31.0" style="-fx-background-color: #6eecc6; -fx-border-radius: 10px; -fx-background-radius: 10px;" text="X" textFill="WHITE">
@@ -23,7 +23,7 @@
             </JFXButton>
             </children>
         </Pane>
-          <JFXTextField fx:id="txtNamaUser" focusColor="#6eecc6" layoutX="24.0" layoutY="158.0" prefHeight="26.0" prefWidth="251.0" promptText="Jumlah Donasi" style="-fx-prompt-text-fill: #908e8e;" unFocusColor="#d0cece" />
+          <JFXTextField fx:id="txtNamaUser" focusColor="#6eecc6" layoutX="24.0" layoutY="158.0" prefHeight="26.0" prefWidth="332.0" promptText="Jumlah Donasi" style="-fx-prompt-text-fill: #908e8e;" unFocusColor="#d0cece" />
           <JFXButton fx:id="btnSimpanUser" layoutX="99.0" layoutY="292.0" onAction="#btnSimpanUserOnClick" prefHeight="38.0" prefWidth="181.0" style="-fx-background-color: #6eecc6; -fx-border-radius: 10px; -fx-border-color: #fff; -fx-background-radius: 10px;" text="SIMPAN" textFill="WHITE">
               <font>
                   <Font name="SansSerif Regular" size="16.0" />
@@ -38,7 +38,7 @@
       </JFXButton>
       <Label layoutX="24.0" layoutY="124.0" text="Nama Event" textFill="#908e8e">
          <font>
-            <Font name="System Bold" size="13.0" />
+            <Font name="Ubuntu Bold" size="13.0" />
          </font>
       </Label>
     </children>

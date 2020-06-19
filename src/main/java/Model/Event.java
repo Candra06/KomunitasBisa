@@ -8,29 +8,57 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.prefs.Preferences;
 
 public class Event extends ORM{
     private static final String TABLE = "event";
     private int id_komunitas;
+    private int id_event;
     private String judul_event;
     private String tanggal;
     private String poster;
     private String deskripsi;
     private int jumlah_donasi;
+    private int jumlah_volunteer;
     private String status;
     private String create_at;
     private String update_at;
 
-    public Event(int id_komunitas, String judul_event, String tanggal, String poster, String deskripsi, int jumlah_donasi, String status, String create_at, String update_at) {
+    public Event(int id_event,int id_komunitas, String judul_event, String tanggal, String poster, String deskripsi, int jumlah_donasi, int jumlah_volunteer, String status, String create_at, String update_at) {
+        this.id_event = id_event;
         this.id_komunitas = id_komunitas;
         this.judul_event = judul_event;
         this.tanggal = tanggal;
         this.poster = poster;
         this.deskripsi = deskripsi;
         this.jumlah_donasi = jumlah_donasi;
+        this.jumlah_volunteer = jumlah_volunteer;
         this.status = status;
         this.create_at = create_at;
         this.update_at = update_at;
+    }
+
+    public Event(int id_event, String judul_event, String tanggal, String status) {
+        this.id_event = id_event;
+        this.judul_event = judul_event;
+        this.tanggal = tanggal;
+        this.status = status;
+    }
+
+    public int getId_event() {
+        return id_event;
+    }
+
+    public void setId_event(int id_event) {
+        this.id_event = id_event;
+    }
+
+    public int getJumlah_volunteer() {
+        return jumlah_volunteer;
+    }
+
+    public void setJumlah_volunteer(int jumlah_volunteer) {
+        this.jumlah_volunteer = jumlah_volunteer;
     }
 
     public int getId_komunitas() {
@@ -108,21 +136,53 @@ public class Event extends ORM{
     public static ArrayList<Event> getEvent(){
         ResultSet resultSet = selectAll(TABLE);
         ArrayList<Event> event = new ArrayList<Event>();
-//        try {
-//            while (resultSet.next()){
-//                String email =resultSet.getString("nama");
-//                String gender =resultSet.getString("gender");
-//                String telepon =resultSet.getString("telepon");
-//                String pekerjaan =resultSet.getString("pekerjaan");
-//                String alamat =resultSet.getString("alamat");
-//                String status =resultSet.getString("status");
-//
-//                Users usersModel = new Users(nama, gender, telepon, pekerjaan, alamat, status);
-//                users.add(usersModel);
-//            }
-//        }catch (Exception e){
-//            e.printStackTrace();
-//        }
+        try {
+            while (resultSet.next()){
+                String judul_event =resultSet.getString("judul_event");
+                int id_event =resultSet.getInt("id");
+                int id_komunitas =resultSet.getInt("id_komunitas");
+                String poster =resultSet.getString("poster");
+                String deskripsi =resultSet.getString("deskripsi");
+                String create_at =resultSet.getString("create_at");
+                String update_at =resultSet.getString("update_at");
+                String tanggal =resultSet.getString("tanggal");
+                int jmlh_donasi =resultSet.getInt("jmlh_donasi");
+                int jmlh_volunteer =resultSet.getInt("jmlh_volunteer");
+                String status =resultSet.getString("status");
+                Event events = new Event(id_event, id_komunitas, judul_event, tanggal,poster,deskripsi, jmlh_donasi, jmlh_volunteer,status,create_at,update_at);
+                event.add(events);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return event;
+    }
+
+    public static ArrayList<Event> getEventByKomunitas(){
+        Preferences pref = Preferences.userRoot();
+        String id_= "";
+        id_ = pref.get("id_komunitas", String.valueOf(id_));
+        ResultSet resultSet = selectAll(TABLE, String.format("id_komunitas=%s", id_));
+        ArrayList<Event> event = new ArrayList<Event>();
+        try {
+            while (resultSet.next()){
+                String judul_event =resultSet.getString("judul_event");
+                int id_event =resultSet.getInt("id");
+                int id_komunitas =resultSet.getInt("id_komunitas");
+                String poster =resultSet.getString("poster");
+                String deskripsi =resultSet.getString("deskripsi");
+                String create_at =resultSet.getString("create_at");
+                String update_at =resultSet.getString("update_at");
+                String tanggal =resultSet.getString("tanggal");
+                int jmlh_donasi =resultSet.getInt("jmlh_donasi");
+                int jmlh_volunteer =resultSet.getInt("jmlh_volunteer");
+                String status =resultSet.getString("status");
+                Event events = new Event(id_event, id_komunitas, judul_event, tanggal,poster,deskripsi, jmlh_donasi, jmlh_volunteer,status,create_at,update_at);
+                event.add(events);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
         return event;
     }
 
@@ -153,24 +213,28 @@ public class Event extends ORM{
         return hasil;
     }
 
-    public static ArrayList<Event> getDetailEvent(){
-        ResultSet resultSet = selectAll(TABLE);
+    public static ArrayList<Event> getDetailEvent(int id){
+        ResultSet resultSet = selectAll(TABLE, String.format("id=%s", id));
         ArrayList<Event> event = new ArrayList<Event>();
-//        try {
-//            while (resultSet.next()){
-//                String email =resultSet.getString("nama");
-//                String gender =resultSet.getString("gender");
-//                String telepon =resultSet.getString("telepon");
-//                String pekerjaan =resultSet.getString("pekerjaan");
-//                String alamat =resultSet.getString("alamat");
-//                String status =resultSet.getString("status");
-//
-//                Users usersModel = new Users(nama, gender, telepon, pekerjaan, alamat, status);
-//                users.add(usersModel);
-//            }
-//        }catch (Exception e){
-//            e.printStackTrace();
-//        }
+        try {
+            while (resultSet.next()){
+                String judul_event =resultSet.getString("judul_event");
+                int id_event =resultSet.getInt("id");
+                int id_komunitas =resultSet.getInt("id_komunitas");
+                String poster =resultSet.getString("poster");
+                String deskripsi =resultSet.getString("deskripsi");
+                String create_at =resultSet.getString("create_at");
+                String update_at =resultSet.getString("update_at");
+                String tanggal =resultSet.getString("tanggal");
+                int jmlh_donasi =resultSet.getInt("jmlh_donasi");
+                int jmlh_volunteer =resultSet.getInt("jmlh_volunteer");
+                String status =resultSet.getString("status");
+                Event events = new Event(id_event, id_komunitas, judul_event, tanggal,poster,deskripsi, jmlh_donasi, jmlh_volunteer,status,create_at,update_at);
+                event.add(events);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
         return event;
     }
 }

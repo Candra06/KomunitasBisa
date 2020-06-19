@@ -1,23 +1,31 @@
 package Controller;
 
 import Helper.Helper;
+import Model.Akun;
+import Model.Users;
 import javafx.event.ActionEvent;
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
+import Helper.ORM;
+
+import java.net.URL;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.ResourceBundle;
+import java.util.prefs.Preferences;
 
 
-public class ProfilAdminKomunitas {
+public class ProfilAdminKomunitas implements Initializable {
     @FXML
     private JFXTextField txtNamaUser;
 
     @FXML
     private JFXTextField txtEmailUser;
-
-    @FXML
-    private JFXComboBox<?> cbbKomunitas;
 
     @FXML
     private JFXPasswordField txtPasswordUser;
@@ -26,12 +34,55 @@ public class ProfilAdminKomunitas {
     private JFXButton btnSimpanUser;
 
     @FXML
+    private Label txtNamaKomunitas;
+
+    @FXML
+    private JFXTextField txtTelepon;
+
+    @FXML
     private JFXButton btnClose;
+
+    @FXML
+    private JFXButton btnBack;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        getDataDetail();
+    }
+
+    void getDataDetail(){
+        int id_komunitas = 0;
+        Preferences pref = Preferences.userRoot();
+        id_komunitas = pref.getInt("id_komunitas", id_komunitas);
+        ResultSet rs = ORM.selectColumn("komunitas", new String[]{"nama_komunitas"}, "id="+id_komunitas);
+        HashMap<String, String> data = (HashMap<String, String>) Akun.getInfoAdminKomunitas();
+        this.txtNamaUser.setText(data.get("nama"));
+        this.txtTelepon.setText(data.get("telepon"));
+        this.txtEmailUser.setText(data.get("email"));
+        try {
+            rs.next();
+            this.txtNamaKomunitas.setText(rs.getString("nama_komunitas"));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    void update(){
+
+    }
+
     public void btnSimpanUserOnClick(ActionEvent actionEvent) {
-        Helper.changePage(actionEvent, "dashboard_komunitas");
+        update();
+
     }
 
     public void btnCloseOnClick(ActionEvent actionEvent) {
         Helper.closeWindow(actionEvent, this.btnClose);
     }
+
+    public void btnBackPageOnClick(ActionEvent actionEvent) {
+        Helper.changePage(actionEvent, "dashboard_komunitas");
+    }
+
+
 }

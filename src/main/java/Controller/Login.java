@@ -4,9 +4,6 @@ import Helper.Helper;
 import Helper.UserSession;
 import Helper.ORM;
 import Model.Akun;
-import Model.Users;
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXPasswordField;
@@ -14,15 +11,11 @@ import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonBar;
-import javafx.scene.control.ButtonType;
 
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.Scanner;
 import java.util.prefs.Preferences;
@@ -137,10 +130,11 @@ public class Login implements Initializable {
                 try {
                     ResultSet resultSet = ORM.selectColumn("user", new String[]{"id, id_akun,nama"}, "id_akun="+id_akun);
                     resultSet.next();
-                    setLEVEL("User");
-                    setNama(resultSet.getString("nama"));
-                    setID(resultSet.getInt("id"));
-                    setID_AKUN(resultSet.getInt("id_akun"));
+                    Preferences userPreferences = Preferences.userRoot();
+                    userPreferences.put("nama",resultSet.getString("nama"));
+                    userPreferences.put("id_akun",resultSet.getString("id_akun"));
+                    userPreferences.put("id",resultSet.getString("id"));
+                    userPreferences.put("level", "user");
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
@@ -155,6 +149,7 @@ public class Login implements Initializable {
                     userPreferences.put("id_akun",resultSet.getString("id_akun"));
                     userPreferences.put("id_komunitas",resultSet.getString("id_komunitas"));
                     userPreferences.put("id",resultSet.getString("id"));
+                    userPreferences.put("level", "komunitas");
                     Helper.alert("Selamat datang!", "Berhasil", "sukses");
                     Helper.changePage(actionEvent, "dashboard_komunitas");
                 } catch (SQLException e) {
@@ -164,9 +159,10 @@ public class Login implements Initializable {
                 try {
                     ResultSet resultSet = ORM.selectColumn("akun", new String[]{"id"}, "id_akun="+id_akun);
                     resultSet.next();
-                    LEVEL = "Admin";
-                    Nama = "Admin";
-                    ID = resultSet.getInt("id");
+                    Preferences userPreferences = Preferences.userRoot();
+                    userPreferences.put("nama", "Admin");
+                    userPreferences.put("id_akun",resultSet.getString("id"));
+                    userPreferences.put("level", "admin");
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }

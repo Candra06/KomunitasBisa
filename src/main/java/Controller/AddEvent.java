@@ -14,12 +14,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
 import org.apache.commons.io.FileUtils;
-
 import java.io.File;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.util.Date;
 import java.util.prefs.Preferences;
 
 
@@ -58,12 +53,13 @@ public class AddEvent {
     private Label txtNameImage;
 
     public void btnAddDataOnClick(ActionEvent actionEvent) {
+        Helper.changePage(actionEvent, "event_page");
     }
 
     void getImage(){
         FileChooser fc = new FileChooser();
         File fs = fc.showOpenDialog(null);
-        File tf = new File("src/main/resource/Poster/"+fs.getName());
+        File tf = new File("src/main/resources/Poster/"+fs.getName());
         this.txtNameImage.setText(fs.getName());
         try {
             FileUtils.copyFile(fs,tf);
@@ -102,12 +98,6 @@ public class AddEvent {
             simpanEvent();
             Helper.changePage(actionEvent, "event_page");
         }
-    }
-
-    public void btnBackOnClick(ActionEvent actionEvent) {
-    }
-
-    public void btnSaveOnClick(ActionEvent actionEvent) {
     }
 
     public void btnCloseOnClick(ActionEvent actionEvent) {

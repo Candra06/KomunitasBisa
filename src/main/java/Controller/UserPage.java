@@ -51,4 +51,8 @@ public class UserPage implements Initializable {
             }
         }
     }
+
+    void showData(){
+
+    }
 }
