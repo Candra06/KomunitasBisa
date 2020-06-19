@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXListView?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -12,7 +13,6 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.UserPage">
    <children>
-      <JFXListView fx:id="listUser" layoutX="379.0" layoutY="87.0" onMouseClicked="#cellOnClick" prefHeight="487.0" prefWidth="507.0" />
       <Pane prefHeight="600.0" prefWidth="354.0" style="-fx-background-color: #6eecc6;">
          <children>
             <Label layoutX="78.0" layoutY="154.0" text="Data User" textFill="WHITE">
@@ -42,5 +42,13 @@
             </ImageView>
          </graphic>
       </JFXButton>
+      <TableView fx:id="tableUser" layoutX="378.0" layoutY="100.0" prefHeight="479.0" prefWidth="507.0">
+        <columns>
+          <TableColumn fx:id="colNama" prefWidth="182.0" text="Nama" />
+          <TableColumn fx:id="colTelepon" prefWidth="127.0" text="Telepon" />
+            <TableColumn fx:id="colPekerjaan" prefWidth="121.0" text="Pekerjaan" />
+            <TableColumn fx:id="colStatus" prefWidth="76.0" text="Status" />
+        </columns>
+      </TableView>
    </children>
 </AnchorPane>

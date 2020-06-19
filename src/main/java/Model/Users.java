@@ -54,25 +54,28 @@ public class Users extends ORM {
         return users;
     }
 
-    public static ArrayList<Users> getDetailUsers(int id_akun){
-        ResultSet resultSet = selectAll("user", String.format("id_akun = '%s'", id_akun));
-        ArrayList<Users> users = new ArrayList<Users>();
-        try {
-            while (resultSet.next()){
-                String nama =resultSet.getString("nama");
-                String gender =resultSet.getString("gender");
-                String telepon =resultSet.getString("telepon");
-                String pekerjaan =resultSet.getString("pekerjaan");
-                String alamat =resultSet.getString("alamat");
-                String status =resultSet.getString("status");
 
-                Users usersModel = new Users(nama, gender, telepon, pekerjaan, alamat, status);
-                users.add(usersModel);
-            }
+
+    public static Map getDetailUsers(){
+        int id_akun = 0;
+        Preferences pr = Preferences.userRoot();
+        id_akun = pr.getInt("id_akun", id_akun);
+        ResultSet resultSet = selectAll("user", String.format("id_akun=%s", id_akun));
+        Map<String, String> hasil =null;
+        try {
+            resultSet.next();
+            Map<String, String> data = new HashMap<String, String>();
+            data.put("nama", resultSet.getString("nama"));
+            data.put("gender", resultSet.getString("gender"));
+            data.put("telepon", resultSet.getString("telepon"));
+            data.put("pekerjaan", resultSet.getString("pekerjaan"));
+            data.put("alamat", resultSet.getString("alamat"));
+
+            hasil = data;
         }catch (Exception e){
             e.printStackTrace();
         }
-        return users;
+        return hasil;
     }
 
     public static boolean insertAkun(String email, String password, String level){
@@ -86,6 +89,20 @@ public class Users extends ORM {
         data.put("status", "'aktif'");
         data.put("create_at", "'"+create_at+"'");
         boolean hasil = insert("akun", data);
+        return hasil;
+    }
+
+    public static boolean updateUser(String nama, String gender, String telepon, String pekerjaan, String alamat){
+        int id_akun = 0;
+        Preferences pr = Preferences.userRoot();
+        id_akun = pr.getInt("id_akun", id_akun);
+        Map<String, String> data = new HashMap<String, String>();
+        data.put("nama", "'"+ nama +"'");
+        data.put("gender", "'"+ gender +"'");
+        data.put("telepon", "'"+ telepon +"'");
+        data.put("pekerjaan", "'"+ pekerjaan +"'");
+        data.put("alamat", "'"+ alamat +"'");
+        boolean hasil = update(TABLE, data, "id_akun="+id_akun);
         return hasil;
     }
 

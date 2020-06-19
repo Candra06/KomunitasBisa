@@ -73,6 +73,25 @@ public class Akun extends ORM {
         return hasil;
     }
 
+    public static Map getInfoUser(){
+        Map<String, String> hasil = null;
+        int id_akun = 0;
+        Preferences pref = Preferences.userRoot();
+        id_akun = pref.getInt("id_akun", id_akun);
+        ResultSet rs = ORM.selectAll(TABLE, "id="+id_akun);
+        try {
+            rs.next();
+            Map<String, String> data = new HashMap<String, String>();
+            data.put("email", rs.getString("email"));
+            data.put("id", rs.getString("id"));
+            hasil = data;
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        System.out.println(hasil);
+        return hasil;
+    }
+
 
 
     public static String getDataAdminKomunitas(int id_akun){
@@ -162,10 +181,14 @@ public class Akun extends ORM {
         return hasil;
     }
 
-    public static boolean UpdateAkun(){
-        Map<String, String> data = null;
-        String value= "";
-        boolean hasil = update(TABLE, data, value);
+    public static boolean UpdateAkun(String email, String password){
+        int id_akun = 0;
+        Preferences pr = Preferences.userRoot();
+        id_akun = pr.getInt("id_akun", id_akun);
+        Map<String, String> data = new HashMap<String, String>();
+        data.put("email", "'"+ email +"'");
+        data.put("password", "'"+ password +"'");
+        boolean hasil = update(TABLE, data, "id="+id_akun);
         return hasil;
     }
 

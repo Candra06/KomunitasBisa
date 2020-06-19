@@ -51,6 +51,21 @@ public class Helper {
 
     }
 
+    public static void logOut(Event event, String page){
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Pesan Konfirmasi");
+        alert.setContentText("Apakah anda yakin ingin logout dari akun berikut?");
+        alert.showAndWait().ifPresent(type -> {
+            if (type == ButtonType.OK) {
+                changePage(event, page);
+
+            } else if (type == ButtonType.NO) {
+                alert.close();
+            }
+        });
+
+    }
+
     public static Connection connect(){
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");

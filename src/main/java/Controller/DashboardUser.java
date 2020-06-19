@@ -4,8 +4,17 @@ import Helper.Helper;
 import javafx.event.ActionEvent;
 import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 
-public class DashboardUser {
+import java.net.URL;
+import java.util.ResourceBundle;
+import java.util.prefs.Preferences;
+
+public class DashboardUser implements Initializable {
+
+    @FXML
+    private Label txtNamaAkun;
 
     @FXML
     private JFXButton btnClose;
@@ -28,11 +37,19 @@ public class DashboardUser {
     }
 
     public void btnKomunitasOnClick(ActionEvent actionEvent) {
-        Helper.changePage(actionEvent, "komunitas_page");
+        Helper.changePage(actionEvent, "komunitas_page_user");
     }
 
     public void btnProfilOnClick(ActionEvent actionEvent) {
         Helper.changePage(actionEvent, "profil_user");
 
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        String nama = "";
+        Preferences pref = Preferences.userRoot();
+        nama = pref.get("nama", nama);
+        this.txtNamaAkun.setText(nama);
     }
 }

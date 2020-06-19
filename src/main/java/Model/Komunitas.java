@@ -21,6 +21,7 @@ public class Komunitas extends ORM{
     private String create_at;
     private String update_at;
     private int rating;
+    private int id;
 
     public Komunitas(String nama_komunitas, String visi, String misi, String deskripsi, String logo, String no_rekening, String status, String create_at, String update_at, int rating) {
         this.nama_komunitas = nama_komunitas;
@@ -35,6 +36,19 @@ public class Komunitas extends ORM{
         this.rating = rating;
     }
 
+    public Komunitas(String nama_komunitas, int rating, int id) {
+        this.nama_komunitas = nama_komunitas;
+        this.rating = rating;
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getNama_komunitas() {
         return nama_komunitas;
@@ -119,6 +133,17 @@ public class Komunitas extends ORM{
     public static ArrayList<Komunitas> getKomuitas(){
         ResultSet resultSet = selectAll(TABLE);
         ArrayList<Komunitas> komunitas = new ArrayList<Komunitas>();
+        try {
+            while (resultSet.next()){
+                String nama_komunitas = resultSet.getString("nama_komunitas");
+                int rating = resultSet.getInt("rating");
+                int id = resultSet.getInt("id");
+                Komunitas komunitas_ = new Komunitas(nama_komunitas, rating, id);
+                komunitas.add(komunitas_);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
         return komunitas;
     }
 
@@ -126,13 +151,13 @@ public class Komunitas extends ORM{
         ResultSet resultSet = selectAll(TABLE, String.format("id=%s", id));
         ArrayList<Komunitas> komunitas = new ArrayList<Komunitas>();
         try {
-//            while (resultSet.next()){
-//                String nama_komunitas = resultSet.getString("nama_komunitas");
-//                String visi = resultSet.getString("visi");
-//                String misi = resultSet.getString("misi");
-//                String deskripsi = resultSet.getString("deskripsi");
-//                Komunitas komunitas_ = new Komunitas();
-//            }
+            while (resultSet.next()){
+                String nama_komunitas = resultSet.getString("nama_komunitas");
+                String visi = resultSet.getString("visi");
+                String misi = resultSet.getString("misi");
+                String deskripsi = resultSet.getString("deskripsi");
+//                Komunitas komunitas_ = new Komunitas(nama_komunitas, visi, misi, deskripsi, logo);
+            }
         }catch (Exception e){
             e.printStackTrace();
         }
