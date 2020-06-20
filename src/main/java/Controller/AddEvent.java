@@ -59,7 +59,7 @@ public class AddEvent {
     void getImage(){
         FileChooser fc = new FileChooser();
         File fs = fc.showOpenDialog(null);
-        File tf = new File("src/main/resources/Poster/"+fs.getName());
+        File tf = new File("src/main/resources/Assets/Poster/"+fs.getName());
         this.txtNameImage.setText(fs.getName());
         try {
             FileUtils.copyFile(fs,tf);

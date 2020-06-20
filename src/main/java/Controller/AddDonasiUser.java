@@ -48,7 +48,7 @@ public class AddDonasiUser {
     void getImage(){
         FileChooser fc = new FileChooser();
         File fs = fc.showOpenDialog(null);
-        File tf = new File("src/main/resources/BuktiTF/"+fs.getName());
+        File tf = new File("src/main/resources/Assets/BuktiTF/"+fs.getName());
         this.bukti = fs.getName();
         this.txtNamaFile.setText(fs.getName());
         try {
