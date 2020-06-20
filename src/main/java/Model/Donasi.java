@@ -3,8 +3,12 @@ package Model;
 import Helper.ORM;
 
 import java.sql.ResultSet;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.Map;
+import java.util.prefs.Preferences;
 
 public class Donasi extends ORM {
     private static final String TABLE= "donasi";
@@ -15,6 +19,7 @@ public class Donasi extends ORM {
     private String status;
     private String create_at;
     private String update_at;
+    private String event;
 
     public Donasi(int id_event, int id_user, int jumlah_donasi, String bukti_donasi, String status, String create_at, String update_at) {
         this.id_event = id_event;
@@ -24,6 +29,20 @@ public class Donasi extends ORM {
         this.status = status;
         this.create_at = create_at;
         this.update_at = update_at;
+    }
+
+    public Donasi(int jumlah_donasi, String status, String event) {
+        this.jumlah_donasi = jumlah_donasi;
+        this.status = status;
+        this.event = event;
+    }
+
+    public String getEvent() {
+        return event;
+    }
+
+    public void setEvent(String event) {
+        this.event = event;
     }
 
     public int getId_event() {
@@ -88,8 +107,40 @@ public class Donasi extends ORM {
         return donasi;
     }
 
-    public static boolean InsertDonasi(){
-        Map<String, String> data = null;
+    public static ArrayList<Donasi> getDonasiByUser(){
+        int id = 0;
+        Preferences pref = Preferences.userRoot();
+        id = pref.getInt("id", id);
+        ResultSet resultSet = selectAll(TABLE, "id_user="+id, "event", "id_event");
+        ArrayList<Donasi> donasi = new ArrayList<Donasi>();
+        try {
+            while (resultSet.next()){
+                String event = resultSet.getString("judul_event");
+                String status = "Di"+resultSet.getString("status");
+                int nominal = resultSet.getInt("jumlah_donasi");
+                Donasi donasi_ = new Donasi(nominal, status, event);
+                donasi.add(donasi_);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return donasi;
+    }
+
+    public static boolean InsertDonasi(int id_event, int jumlah_donasi, String bukti){
+        int id_user = 0;
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Preferences pr = Preferences.userRoot();
+        id_user = pr.getInt("id", id_user);
+        Date date = new Date();
+        String create_at = format.format(date);
+        Map<String, String> data = new HashMap<String, String>();
+        data.put("id_event", "'"+id_event+"'");
+        data.put("id_user", "'"+id_user+"'");
+        data.put("jumlah_donasi", "'"+jumlah_donasi+"'");
+        data.put("bukti_donasi", "'"+bukti+"'");
+        data.put("create_at", "'"+create_at+"'");
+        data.put("update_at", "'"+create_at+"'");
         boolean hasil = insert(TABLE, data);
         return hasil;
     }

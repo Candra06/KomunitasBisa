@@ -1,7 +1,6 @@
 package Controller;
 
 import Helper.Helper;
-import Helper.UserSession;
 import Helper.ORM;
 import Model.Akun;
 import com.jfoenix.controls.JFXButton;
@@ -17,7 +16,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
-import java.util.Scanner;
 import java.util.prefs.Preferences;
 
 public class Login implements Initializable {

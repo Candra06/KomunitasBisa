@@ -23,6 +23,9 @@ public class DashboardUser implements Initializable {
     private JFXButton btnEven;
 
     @FXML
+    private JFXButton btnHistory;
+
+    @FXML
     private JFXButton btnKomunitas;
 
     @FXML
@@ -33,7 +36,7 @@ public class DashboardUser implements Initializable {
     }
 
     public void btnEvenOnClick(ActionEvent actionEvent) {
-        Helper.changePage(actionEvent, "event_page");
+        Helper.changePage(actionEvent, "event_page_user");
     }
 
     public void btnKomunitasOnClick(ActionEvent actionEvent) {
@@ -51,5 +54,9 @@ public class DashboardUser implements Initializable {
         Preferences pref = Preferences.userRoot();
         nama = pref.get("nama", nama);
         this.txtNamaAkun.setText(nama);
+    }
+
+    public void btnHistoryOnClick(ActionEvent actionEvent) {
+        Helper.changePage(actionEvent, "history_page");
     }
 }

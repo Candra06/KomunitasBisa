@@ -4,11 +4,13 @@
 <?import com.jfoenix.controls.JFXCheckBox?>
 <?import com.jfoenix.controls.JFXTextArea?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="358.0" prefWidth="334.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AddRating">
+<AnchorPane prefHeight="358.0" prefWidth="334.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.RegisterVolunteer">
     <children>
         <Pane prefHeight="62.0" prefWidth="379.0" style="-fx-background-color: #6eecc6;">
             <children>
@@ -17,21 +19,28 @@
                         <Font name="System Bold" size="24.0" />
                     </font>
                 </Label>
-                <JFXButton fx:id="btnSimpanUser2" layoutX="345.0" layoutY="-1.0" onAction="#btnSimpanUserOnClick" prefHeight="26.0" prefWidth="31.0" style="-fx-background-color: #6eecc6; -fx-border-radius: 10px; -fx-background-radius: 10px;" text="X" textFill="WHITE">
+                <JFXButton fx:id="btnClose" contentDisplay="GRAPHIC_ONLY" layoutX="340.0" layoutY="-1.0" onAction="#btnCloseOnClick" prefHeight="26.0" prefWidth="31.0" style="-fx-background-color: #6eecc6; -fx-border-radius: 10px; -fx-background-radius: 10px;" textFill="WHITE">
                     <font>
                         <Font name="SansSerif Regular" size="16.0" />
                     </font>
+               <graphic>
+                  <ImageView fitHeight="18.0" fitWidth="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Assets/Image/exit.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
                 </JFXButton>
             </children>
         </Pane>
-        <JFXButton fx:id="btnSimpanUser" layoutX="99.0" layoutY="306.0" onAction="#btnSimpanUserOnClick" prefHeight="38.0" prefWidth="181.0" style="-fx-background-color: #6eecc6; -fx-border-radius: 10px; -fx-border-color: #fff; -fx-background-radius: 10px;" text="SIMPAN" textFill="WHITE">
+        <JFXButton fx:id="btnSimpan" layoutX="99.0" layoutY="306.0" onAction="#btnSimpanOnClick" prefHeight="38.0" prefWidth="181.0" style="-fx-background-color: #6eecc6; -fx-border-radius: 10px; -fx-border-color: #fff; -fx-background-radius: 10px;" text="SIMPAN" textFill="WHITE">
             <font>
                 <Font name="SansSerif Regular" size="16.0" />
             </font>
         </JFXButton>
 
         <Label layoutX="24.0" layoutY="84.0" textFill="#908e8e" />
-      <JFXCheckBox layoutX="29.0" layoutY="117.0" text="Saya setuju dengan sayarat yang ada" />
-      <JFXTextArea layoutX="29.0" layoutY="152.0" prefHeight="144.0" prefWidth="322.0" promptText="Keterangan" />
+      <JFXCheckBox fx:id="cbbAgree" layoutX="29.0" layoutY="117.0" text="Saya setuju dengan sayarat yang ada" />
+      <JFXTextArea fx:id="txtKeterangan" layoutX="29.0" layoutY="152.0" prefHeight="144.0" prefWidth="322.0" promptText="Keterangan" />
     </children>
 </AnchorPane>

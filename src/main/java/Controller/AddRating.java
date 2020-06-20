@@ -18,6 +18,5 @@ public class AddRating {
 
     }
 
-    public void btnSimpanUserOnClick(javafx.event.ActionEvent actionEvent) {
-    }
+
 }
