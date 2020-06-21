@@ -5,6 +5,7 @@ import Model.Donasi;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -69,6 +70,16 @@ public class DonasiPage implements Initializable{
             list.add(new Donasi(donasi.getJumlah_donasi(), donasi.getStatus(), donasi.getEvent(), donasi.getCreate_at(), donasi.getNama()));
         }
         table.setItems(list);
+
+        table.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+
+            }
+        });
     }
 
+    public void btnBackPageOnClick(ActionEvent actionEvent) {
+        Helper.changePage(actionEvent, "dashboard_komunitas");
+    }
 }

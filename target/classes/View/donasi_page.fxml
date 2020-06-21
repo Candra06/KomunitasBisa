@@ -15,6 +15,15 @@
 <AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.DonasiPage">
    <children>
       <Pane prefHeight="600.0" prefWidth="354.0" style="-fx-background-color: #6eecc6;">
+          <JFXButton fx:id="btnBack" onAction="#btnBackPageOnClick" text="Kembali" textFill="#fffefe" textOverrun="CENTER_ELLIPSIS">
+              <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                          <Image url="@../Assets/Image/arrow.png" />
+                      </image>
+                  </ImageView>
+              </graphic>
+          </JFXButton>
          <children>
             <Label layoutX="78.0" layoutY="154.0" text="Data Donasi" textFill="WHITE">
                <font>

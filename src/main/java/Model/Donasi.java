@@ -122,7 +122,7 @@ public class Donasi extends ORM {
         int id_komunitas = 0;
         Preferences p = Preferences.userRoot();
         id_komunitas = p.getInt("id_komunitas", id_komunitas);
-        ResultSet resultSet = selectAll(TABLE, "id_komunitas="+id_komunitas,"event","id_event", "user", "id_user");
+        ResultSet resultSet = selectAll(TABLE, "id_komunitas="+id_komunitas+" AND donasi.status='diteruskan' OR donasi.status='diterima'","event","id_event", "user", "id_user");
         ArrayList<Donasi> donasi = new ArrayList<Donasi>();
         try {
             while (resultSet.next()){

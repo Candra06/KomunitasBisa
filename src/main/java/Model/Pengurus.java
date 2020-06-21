@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.prefs.Preferences;
 
 public class Pengurus extends ORM{
     private static final String TABLE = "pengurus";
@@ -121,10 +122,18 @@ public class Pengurus extends ORM{
         return hasil;
     }
 
-    public static boolean UpdatePengurus(){
-        Map<String, String> data = null;
-        String value= "";
-        boolean hasil = update(TABLE, data, value);
+    public static boolean UpdatePengurus(String nama, String telepon){
+        int id = 0;
+        Preferences p = Preferences.userRoot();
+        id = p.getInt("id_akun", id);
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date date = new Date();
+        String create_at = format.format(date);
+        Map<String, String> data = new HashMap<String, String>();
+        data.put("nama", "'"+nama+"'");
+        data.put("telepon", "'"+telepon+"'");
+        data.put("update_at", "'"+create_at+"'");
+        boolean hasil = update(TABLE, data, "id_akun="+id);
         return hasil;
     }
 

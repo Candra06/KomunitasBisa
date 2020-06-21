@@ -13,8 +13,10 @@ import java.util.prefs.Preferences;
 public class Volunteer extends ORM {
     private static final String TABLE= "volunteer";
     private  int id_event;
+    private  int id_volunteer;
     private  int id_user;
     private  String kriteria;
+    private  String nama;
     private  String keterangan;
     private  String status;
     private  String create_at;
@@ -34,6 +36,30 @@ public class Volunteer extends ORM {
     public Volunteer(String status, String event) {
         this.status = status;
         this.event = event;
+    }
+
+    public Volunteer(int id_volunteer, String kriteria, String status, String event, String nama) {
+        this.id_volunteer = id_volunteer;
+        this.kriteria = kriteria;
+        this.status = status;
+        this.event = event;
+        this.nama = nama;
+    }
+
+    public int getId_volunteer() {
+        return id_volunteer;
+    }
+
+    public void setId_volunteer(int id_volunteer) {
+        this.id_volunteer = id_volunteer;
+    }
+
+    public String getNama() {
+        return nama;
+    }
+
+    public void setNama(String nama) {
+        this.nama = nama;
     }
 
     public int getId_event() {
@@ -120,6 +146,29 @@ public class Volunteer extends ORM {
         return volunteers;
     }
 
+    public static ArrayList<Volunteer> getVolunteerByKomunitas(){
+        int id = 0;
+        Preferences pref = Preferences.userRoot();
+        id = pref.getInt("id_komunitas", id);
+        ResultSet resultSet = selectAll(TABLE, "id_komunitas="+id, "event", "id_event", "user", "id_user");
+        ArrayList<Volunteer> volunteers = new ArrayList<Volunteer>();
+        try {
+            while (resultSet.next()){
+                String event = resultSet.getString("judul_event");
+                String status = "Di"+resultSet.getString("status");
+                String nama = resultSet.getString("nama");
+                String kriteria = resultSet.getString("kriteria");
+                int id_ = resultSet.getInt("id");
+                Volunteer volunteer = new Volunteer(id_, kriteria, status,event, nama);
+                volunteers.add(volunteer);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return volunteers;
+    }
+
+
     public static boolean InsertVolunteer(int id_event, String kriteria, String keterangan){
         int id_user = 0;
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -138,10 +187,10 @@ public class Volunteer extends ORM {
         return hasil;
     }
 
-    public static boolean UpdateVolunteer(){
-        Map<String, String> data = null;
-        String value= "";
-        boolean hasil = update(TABLE, data, value);
+    public static boolean UpdateVolunteer(int id, String status){
+        Map<String, String> data = new HashMap<String, String>();
+        data.put("status", "'"+ status +"'");
+        boolean hasil = update(TABLE, data, "id="+id);
         return hasil;
     }
 

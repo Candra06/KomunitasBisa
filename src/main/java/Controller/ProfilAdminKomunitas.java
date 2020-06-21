@@ -2,6 +2,7 @@ package Controller;
 
 import Helper.Helper;
 import Model.Akun;
+import Model.Pengurus;
 import Model.Users;
 import javafx.event.ActionEvent;
 import com.jfoenix.controls.JFXButton;
@@ -68,11 +69,25 @@ public class ProfilAdminKomunitas implements Initializable {
     }
 
     void update(){
-
+        boolean status = Pengurus.UpdatePengurus(this.txtNamaUser.getText(),this.txtTelepon.getText());
+        if (status == true){
+            boolean akun = Akun.UpdateAkun(this.txtEmailUser.getText(), this.txtPasswordUser.getText());
+            if (akun == true){
+                Helper.alert("Berhasil mengupdate data", "Berhasil", "sukses");
+            }else {
+                Helper.alert("Gagal mengupdate data", "Gagal", "gagal");
+            }
+        }else {
+            Helper.alert("Gagal mengupdate data", "Gagal", "gagal");
+        }
     }
 
     public void btnSimpanUserOnClick(ActionEvent actionEvent) {
-        update();
+        if (this.txtNamaUser.getText().equals("") || this.txtEmailUser.getText().equals("") || this.txtTelepon.getText().equals("") || this.txtPasswordUser.getText().equals("")){
+            Helper.alert("Lengkapi form yang tersedia", "Info", "info");
+        }else {
+            update();
+        }
 
     }
 
