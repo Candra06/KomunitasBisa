@@ -120,7 +120,6 @@ public class EventPage implements Initializable {
             tableUsr.setOnMouseClicked(new EventHandler<MouseEvent>() {
                 @Override
                 public void handle(MouseEvent mouseEvent) {
-                    Parent rt;
                     try {
                         FXMLLoader loader = new FXMLLoader(getClass().getResource("../View/detail_event.fxml"));
                         Parent root = loader.load();

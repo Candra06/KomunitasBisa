@@ -16,6 +16,7 @@ public class Donasi extends ORM {
     private int id_user;
     private int jumlah_donasi;
     private String bukti_donasi;
+    private String nama;
     private String status;
     private String create_at;
     private String update_at;
@@ -35,6 +36,22 @@ public class Donasi extends ORM {
         this.jumlah_donasi = jumlah_donasi;
         this.status = status;
         this.event = event;
+    }
+
+    public Donasi(int jumlah_donasi, String status, String event, String tanggal, String nama) {
+        this.jumlah_donasi = jumlah_donasi;
+        this.status = status;
+        this.event = event;
+        this.create_at = tanggal;
+        this.nama = nama;
+    }
+
+    public String getNama() {
+        return nama;
+    }
+
+    public void setNama(String nama) {
+        this.nama = nama;
     }
 
     public String getEvent() {
@@ -101,9 +118,25 @@ public class Donasi extends ORM {
         this.update_at = update_at;
     }
 
-    public static ArrayList<Donasi> getDonasi(){
-        ResultSet resultSet = selectAll(TABLE);
+    public static ArrayList<Donasi> getDonasiByKomunitas(){
+        int id_komunitas = 0;
+        Preferences p = Preferences.userRoot();
+        id_komunitas = p.getInt("id_komunitas", id_komunitas);
+        ResultSet resultSet = selectAll(TABLE, "id_komunitas="+id_komunitas,"event","id_event", "user", "id_user");
         ArrayList<Donasi> donasi = new ArrayList<Donasi>();
+        try {
+            while (resultSet.next()){
+                String event = resultSet.getString("judul_event");
+                String status = resultSet.getString("status");
+                String tanggal = resultSet.getString("create_at");
+                String nama = resultSet.getString("nama");
+                int nominal = resultSet.getInt("jmlh_donasi");
+                Donasi donasi_ = new Donasi(nominal, status, event,tanggal, nama);
+                donasi.add(donasi_);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
         return donasi;
     }
 

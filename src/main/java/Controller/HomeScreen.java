@@ -28,13 +28,8 @@ public class HomeScreen {
         Helper.changePage(event, "pg_login");
     }
 
-    @FXML
-    void btnRegisterOnClick(ActionEvent event) {
-
-    }
-
     public void btnEventOnClick(javafx.event.ActionEvent actionEvent) {
-        Helper.changePage(actionEvent, "dashboard_admin");
+        Helper.changePage(actionEvent, "list_event_page");
     }
 
     public void btnRegisterOnClick(javafx.event.ActionEvent actionEvent) {

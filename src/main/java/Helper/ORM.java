@@ -27,6 +27,11 @@ public class ORM {
         return getResultSet(sql);
     }
 
+    protected static ResultSet selectAll(String table, String requirment, String joinTable, String foreignKey, String table2, String foreignkey2){
+        String sql = String.format("SELECT * FROM %s JOIN %s ON %s.%s = %s.id JOIN %s ON %s.%s = %s.id WHERE %s", table, joinTable, table, foreignKey, joinTable, table2, table,foreignkey2, table2, requirment);
+        return getResultSet(sql);
+    }
+
     public static ResultSet selectColumn(String table, String[] columns){
         String col = "";
         for(String s : columns){

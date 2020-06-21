@@ -185,10 +185,6 @@ public class Event extends ORM{
                 String judul_event =resultSet.getString("judul_event");
                 int id_event =resultSet.getInt("id");
                 String komunitas =resultSet.getString("nama_komunitas");
-                String poster =resultSet.getString("poster");
-                String deskripsi =resultSet.getString("deskripsi");
-                String create_at =resultSet.getString("create_at");
-                String update_at =resultSet.getString("update_at");
                 String tanggal =resultSet.getString("tanggal");
                 int jmlh_donasi =resultSet.getInt("jmlh_donasi");
                 int jmlh_volunteer =resultSet.getInt("jmlh_volunteer");

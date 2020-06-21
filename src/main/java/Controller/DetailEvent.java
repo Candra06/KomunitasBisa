@@ -24,6 +24,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.ResourceBundle;
+import java.util.prefs.Preferences;
 
 public class DetailEvent implements Initializable {
     private int id_event;
@@ -74,7 +75,16 @@ public class DetailEvent implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        System.out.println("idnya bro "+getId_event());
+        String level = "";
+        Preferences preferences = Preferences.userRoot();
+        level = preferences.get("level", level);
+        if (!level.equals("user")){
+            this.btnVolunteer.setVisible(false);
+            this.btnDonasi.setVisible(false);
+        }else {
+            this.btnVolunteer.setVisible(false);
+            this.btnDonasi.setVisible(false);
+        }
     }
 
     public void LoadData(int id){
