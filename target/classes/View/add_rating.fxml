@@ -2,6 +2,8 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
@@ -16,26 +18,33 @@
                         <Font name="System Bold" size="24.0" />
                     </font>
                 </Label>
-                <JFXButton fx:id="btnSimpanUser2" layoutX="345.0" layoutY="-1.0" onAction="#btnSimpanUserOnClick" prefHeight="26.0" prefWidth="31.0" style="-fx-background-color: #6eecc6; -fx-border-radius: 10px; -fx-background-radius: 10px;" text="X" textFill="WHITE">
+                <JFXButton fx:id="btnClose" contentDisplay="GRAPHIC_ONLY" layoutX="340.0" layoutY="-1.0" onAction="#btnCloseOnClick" prefHeight="26.0" prefWidth="31.0" style="-fx-background-color: #6eecc6; -fx-border-radius: 10px; -fx-background-radius: 10px;" text="X" textFill="WHITE">
                     <font>
                         <Font name="SansSerif Regular" size="16.0" />
                     </font>
+               <graphic>
+                  <ImageView fitHeight="17.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Assets/Image/exit.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
                 </JFXButton>
             </children>
         </Pane>
-        <JFXButton fx:id="btnSimpanUser" layoutX="99.0" layoutY="292.0" onAction="#btnSimpanUserOnClick" prefHeight="38.0" prefWidth="181.0" style="-fx-background-color: #6eecc6; -fx-border-radius: 10px; -fx-border-color: #fff; -fx-background-radius: 10px;" text="SIMPAN" textFill="WHITE">
+        <JFXButton fx:id="btnSimpan" layoutX="99.0" layoutY="292.0" onAction="#btnSimpanOnClick" prefHeight="38.0" prefWidth="181.0" style="-fx-background-color: #6eecc6; -fx-border-radius: 10px; -fx-border-color: #fff; -fx-background-radius: 10px;" text="SIMPAN" textFill="WHITE">
             <font>
                 <Font name="SansSerif Regular" size="16.0" />
             </font>
         </JFXButton>
 
         <Label layoutX="24.0" layoutY="84.0" text="Beri rating untuk komunitas" textFill="#908e8e" />
-        <Label layoutX="127.0" layoutY="127.0" text="Nama Komunitas" textFill="#908e8e">
+        <Label fx:id="txtNamaKomunitas" layoutX="127.0" layoutY="127.0" text="Nama Komunitas" textFill="#908e8e">
             <font>
                 <Font name="System Bold" size="13.0" />
             </font>
         </Label>
-      <Rating layoutX="102.0" layoutY="169.0" prefWidth="266.0" >
+      <Rating fx:id="rating" layoutX="102.0" layoutY="169.0" prefWidth="266.0">
           <prefHeight>32.0</prefHeight>
       </Rating>
 </children>

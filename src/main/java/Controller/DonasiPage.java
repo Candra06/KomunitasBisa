@@ -6,7 +6,10 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
@@ -17,7 +20,10 @@ import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -67,14 +73,28 @@ public class DonasiPage implements Initializable{
 
         ArrayList<Donasi> data = Donasi.getDonasiByKomunitas();
         for (Donasi donasi:data){
-            list.add(new Donasi(donasi.getJumlah_donasi(), donasi.getStatus(), donasi.getEvent(), donasi.getCreate_at(), donasi.getNama()));
+            list.add(new Donasi(donasi.getJumlah_donasi(), donasi.getStatus(), donasi.getEvent(), donasi.getCreate_at(), donasi.getNama(), donasi.getId_donasi()));
         }
         table.setItems(list);
 
         table.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("../View/konfirmasi_donasi.fxml"));
+                Parent root = null;
+                try {
+                    root = loader.load();
+                    KonfirmasiDonasi kn = loader.getController();
+                    kn.loaddata(table.getSelectionModel().getSelectedItem().getId_donasi());
+                    Stage stage =new Stage();
+                    stage.initStyle(StageStyle.UNDECORATED);
+                    stage.setResizable(false);
+                    stage.setScene(new Scene(root));
+                    stage.show();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                System.out.println(table.getSelectionModel().getSelectedItem().getId_donasi());
             }
         });
     }

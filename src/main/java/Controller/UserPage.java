@@ -23,6 +23,9 @@ import java.util.ResourceBundle;
 public class UserPage implements Initializable {
 
     @FXML
+    private JFXButton btnBack;
+
+    @FXML
     private JFXButton btnAddUser;
 
     @FXML
@@ -74,4 +77,7 @@ public class UserPage implements Initializable {
         tableUser.setItems(observableList);
     }
 
+    public void btnBackOnClick(ActionEvent actionEvent) {
+        Helper.changePage(actionEvent, "dashboard_admin");
+    }
 }

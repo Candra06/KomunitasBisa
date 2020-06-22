@@ -32,7 +32,7 @@ public class ProfilAdminKomunitas implements Initializable {
     private JFXPasswordField txtPasswordUser;
 
     @FXML
-    private JFXButton btnSimpanUser;
+    private JFXButton btnLogout;
 
     @FXML
     private Label txtNamaKomunitas;
@@ -100,4 +100,7 @@ public class ProfilAdminKomunitas implements Initializable {
     }
 
 
+    public void btnLogoutOnClick(ActionEvent actionEvent) {
+        Helper.logOut(actionEvent, "home_screen");
+    }
 }

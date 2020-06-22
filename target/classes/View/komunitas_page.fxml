@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXListView?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
-
 
 <AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.KomunitasPage">
    <children>
@@ -26,23 +26,38 @@
                </font>
             </Label>
             <Label layoutX="33.0" layoutY="221.0" prefHeight="54.0" prefWidth="289.0" text="Temukan komunitas yang telah bergabung dalam aplikasi. Klik tombol dibawah untuk menambahkan komunitas." textAlignment="CENTER" textFill="WHITE" wrapText="true" />
-            <ImageView fitHeight="54.0" fitWidth="188.0" layoutX="15.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="54.0" fitWidth="188.0" layoutX="204.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Assets/Image/Logowht.png" />
                </image>
             </ImageView>
+            <JFXButton fx:id="btnBackKmnts" layoutX="14.0" layoutY="9.0" onAction="#btnBackKmntsOnClick" text="Kembali" textFill="#f5f4f4">
+               <graphic>
+                  <ImageView fitHeight="29.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Assets/Image/arrow.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
          </children>
       </Pane>
-      <JFXListView fx:id="listKomunitas" layoutX="399.0" layoutY="83.0" prefHeight="472.0" prefWidth="461.0" />
       <JFXTextField fx:id="txtCariKomunitas" focusColor="#6eecc6" layoutX="399.0" layoutY="36.0" prefHeight="26.0" prefWidth="461.0" promptText="Cari Komunitas" />
       <JFXButton fx:id="btnClose" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="861.0" onAction="#btnCloseOnClick" prefHeight="30.0" prefWidth="20.0">
          <graphic>
             <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Assets/Image/close_green.png" />
+                  <Image url="@../Assets/Image/exit_primary.png" />
                </image>
             </ImageView>
          </graphic>
       </JFXButton>
+      <TableView fx:id="tabelKomunitas" layoutX="376.0" layoutY="81.0" prefHeight="499.0" prefWidth="507.0">
+        <columns>
+          <TableColumn fx:id="clNamaKomunitas" prefWidth="200.0" text="Nama" />
+          <TableColumn fx:id="clRatingKmnts" minWidth="0.0" prefWidth="121.0" text="Rating" />
+            <TableColumn fx:id="clRekening" minWidth="0.0" prefWidth="185.0" text="Rekening" />
+        </columns>
+      </TableView>
    </children>
 </AnchorPane>

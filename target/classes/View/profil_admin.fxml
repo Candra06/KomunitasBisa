@@ -10,14 +10,14 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ProfilAdmin">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ProfilAdmin">
     <children>
-        <Pane layoutX="385.0" layoutY="36.0" prefHeight="549.0" prefWidth="504.0">
+        <Pane layoutX="385.0" layoutY="36.0" prefHeight="549.0" prefWidth="504.0" style="-fx-background-color: #fff;">
             <children>
-                <JFXTextField fx:id="txtNamaUser" focusColor="#6eecc6" layoutX="30.0" layoutY="102.0" prefHeight="26.0" prefWidth="445.0" promptText="Nama Lengkap" style="-fx-prompt-text-fill: #908e8e;" unFocusColor="#d0cece" />
-                <JFXTextField fx:id="txtEmailUser" focusColor="#6eecc6" layoutX="30.0" layoutY="157.0" prefHeight="26.0" prefWidth="445.0" promptText="Email/Username" style="-fx-prompt-text-fill: #908e8e;" unFocusColor="#d0cece" />
+                <JFXTextField fx:id="txtNamaUser" disable="true" editable="false" focusColor="#6eecc6" labelFloat="true" layoutX="30.0" layoutY="102.0" prefHeight="26.0" prefWidth="445.0" promptText="Nama Lengkap" style="-fx-prompt-text-fill: #908e8e;" unFocusColor="#d0cece" />
+                <JFXTextField fx:id="txtEmailUser" focusColor="#6eecc6" labelFloat="true" layoutX="30.0" layoutY="157.0" prefHeight="26.0" prefWidth="445.0" promptText="Email/Username" style="-fx-prompt-text-fill: #908e8e;" unFocusColor="#d0cece" />
 
-                <JFXPasswordField fx:id="txtPasswordUser" focusColor="#6eecc6" layoutX="30.0" layoutY="214.0" prefHeight="26.0" prefWidth="445.0" promptText="Password" style="-fx-prompt-text-fill: #908e8e;" unFocusColor="#d0cece" />
+                <JFXPasswordField fx:id="txtPasswordUser" focusColor="#6eecc6" labelFloat="true" layoutX="30.0" layoutY="214.0" prefHeight="26.0" prefWidth="445.0" promptText="Password" style="-fx-prompt-text-fill: #908e8e;" unFocusColor="#d0cece" />
                 <JFXButton fx:id="btnSimpanUser" layoutX="164.0" layoutY="350.0" onAction="#btnSimpanUserOnClick" prefHeight="38.0" prefWidth="181.0" style="-fx-background-color: #6eecc6; -fx-border-radius: 10px; -fx-border-color: #fff; -fx-background-radius: 10px;" text="SIMPAN" textFill="WHITE">
                     <font>
                         <Font name="SansSerif Regular" size="16.0" />
@@ -36,18 +36,27 @@
                 </Label>
                 <Label layoutX="19.0" layoutY="194.0" prefHeight="82.0" prefWidth="316.0" text="Biarkan data jika tidak ingin merubah data yang telah ada" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
 
-                <ImageView fitHeight="82.0" fitWidth="200.0" layoutX="19.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                      <ImageView fitHeight="57.0" fitWidth="167.0" layoutX="219.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../Assets/Image/Logowht.png" />
                     </image>
                 </ImageView>
+            <JFXButton fx:id="btnBack" layoutX="14.0" layoutY="7.0" onAction="#btnBackOnClick" text="Kembali" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Assets/Image/arrow.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
             </children>
         </Pane>
         <JFXButton fx:id="btnClose" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="852.0" layoutY="3.0" onAction="#btnCloseOnClick" prefHeight="30.0" prefWidth="20.0">
             <graphic>
-                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="20.0" fitWidth="20.0" onDragDetected="#btnCloseOnClick" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@../Assets/Image/close_green.png" />
+                        <Image url="@../Assets/Image/exit_primary.png" />
                     </image>
                 </ImageView>
             </graphic>

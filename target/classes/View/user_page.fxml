@@ -25,11 +25,20 @@
                <font>
                   <Font size="16.0" />
                </font></JFXButton>
-            <ImageView fitHeight="82.0" fitWidth="200.0" layoutX="19.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="48.0" fitWidth="162.0" layoutX="211.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Assets/Image/Logowht.png" />
                </image>
             </ImageView>
+            <JFXButton fx:id="btnBack" layoutX="14.0" layoutY="14.0" onAction="#btnBackOnClick" text="Kembali" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="29.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Assets/Image/arrow.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
          </children>
       </Pane>
       <JFXTextField fx:id="txtCari" focusColor="#6eecc6" layoutX="378.0" layoutY="44.0" prefHeight="26.0" prefWidth="507.0" promptText="Cari User" style="-fx-prompt-text-fill: #908e8e;" unFocusColor="#d6d3d3" />

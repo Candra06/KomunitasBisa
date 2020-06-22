@@ -7,13 +7,13 @@
 <?import com.jfoenix.controls.JFXTextArea?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
+<?import javafx.scene.control.ScrollPane?>
 <AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Register">
    <children>
       <Pane layoutX="-2.0" prefHeight="608.0" prefWidth="350.0" style="-fx-background-color: #6eecc6;">
@@ -58,11 +58,11 @@
        </Pane>
       <Pane fx:id="paneKomunitas1" layoutX="350.0" prefHeight="608.0" prefWidth="550.0" style="-fx-background-color: #fff;">
          <children>
-            <JFXTextField fx:id="txtNamaKomuitas" focusColor="#6eecc6" layoutX="53.0" layoutY="184.0" prefHeight="26.0" prefWidth="450.0" promptText="Nama Komunitas" style="-fx-prompt-text-fill: #908e8e;" unFocusColor="#d0cece" />
+            <JFXTextField fx:id="txtNamaKomuitas" focusColor="#6eecc6" labelFloat="true" layoutX="53.0" layoutY="184.0" prefHeight="26.0" prefWidth="450.0" promptText="Nama Komunitas" style="-fx-prompt-text-fill: #908e8e;" unFocusColor="#d0cece" />
             <JFXTextArea fx:id="txtVisi" focusColor="#6eecc6" layoutX="53.0" layoutY="289.0" prefHeight="64.0" prefWidth="220.0" promptText="Visi Komunitas" style="-fx-prompt-text-fill: #908e8e;" unFocusColor="#d0cece" />
             <JFXTextArea fx:id="txtMisi" focusColor="#6eecc6" layoutX="283.0" layoutY="289.0" prefHeight="64.0" prefWidth="220.0" promptText="Misi Komunitas" style="-fx-prompt-text-fill: #908e8e;" unFocusColor="#d0cece" />
             <JFXTextArea fx:id="txtDeskripsi" focusColor="#6eecc6" layoutX="53.0" layoutY="385.0" prefHeight="64.0" prefWidth="450.0" promptText="Deskripsi Komunitas" style="-fx-prompt-text-fill: #908e8e;" unFocusColor="#d0cece" />
-            <JFXButton fx:id="btnUploadLogo" layoutX="55.0" layoutY="481.0" onAction="#btnUploasOnClick" prefHeight="40.0" prefWidth="190.0" style="-fx-border-radius: 10px; -fx-background-color: #eaeaec;" text="LOGO KOMUNITAS" textFill="#908e8e" />
+<!--            <JFXButton fx:id="btnUploadLogo" layoutX="55.0" layoutY="481.0" onAction="#btnUploasOnClick" prefHeight="40.0" prefWidth="190.0" style="-fx-border-radius: 10px; -fx-background-color: #eaeaec;" text="LOGO KOMUNITAS" textFill="#908e8e" />-->
             <Label layoutX="53.0" layoutY="65.0" text="Lengkapi data komunitas anda dengan benar" textFill="#908e8e" />
             <JFXButton fx:id="btnNextLevel" layoutX="193.0" layoutY="537.0" onAction="#btnNextOnClick" prefHeight="40.0" prefWidth="181.0" style="-fx-border-radius: 10px; -fx-background-color: #6eecc6; -fx-background-radius: 10px;" text="SELANJUTNYA" textFill="WHITE" />
             <Pane layoutX="50.0" layoutY="119.0" prefHeight="48.0" prefWidth="200.0" style="-fx-background-color: #6eecc6; -fx-background-radius: 10px 10px 0px 0px;">
@@ -83,6 +83,7 @@
                   </Label>
                </children>
             </Pane>
+            <JFXTextField fx:id="txtNomorRekening" focusColor="#6eecc6" labelFloat="true" layoutX="53.0" layoutY="236.0" prefHeight="26.0" prefWidth="450.0" promptText="Nomor Rekening" style="-fx-prompt-text-fill: #908e8e;" unFocusColor="#d0cece" />
 
          </children>
       </Pane>

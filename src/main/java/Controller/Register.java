@@ -55,6 +55,9 @@ public class Register implements Initializable {
     private JFXCheckBox cbSetuju;
 
     @FXML
+    private JFXTextField txtNomorRekening;
+
+    @FXML
     private JFXButton btnSimpanUser;
 
     @FXML
@@ -181,7 +184,7 @@ public class Register implements Initializable {
     }
 
     void simpanKomunitas(){
-        boolean status = Komunitas.InsertKomunitas(this.txtNamaKomuitas.getText(), this.txtVisi.getText(), this.txtMisi.getText(), this.txtDeskripsi.getText(), "Logo.png");
+        boolean status = Komunitas.InsertKomunitas(this.txtNamaKomuitas.getText(), this.txtVisi.getText(), this.txtMisi.getText(), this.txtDeskripsi.getText(), "Logo.png", this.txtNomorRekening.getText());
         if (status == true){
             simpanAkunKetua();
         }else {

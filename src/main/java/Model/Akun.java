@@ -157,21 +157,7 @@ public class Akun extends ORM {
     public static ArrayList<Akun> getAkun(){
         ResultSet resultSet = selectAll(TABLE);
         ArrayList<Akun> akun = new ArrayList<Akun>();
-//        try {
-//            while (resultSet.next()){
-//                String email =resultSet.getString("nama");
-//                String gender =resultSet.getString("gender");
-//                String telepon =resultSet.getString("telepon");
-//                String pekerjaan =resultSet.getString("pekerjaan");
-//                String alamat =resultSet.getString("alamat");
-//                String status =resultSet.getString("status");
-//
-//                Users usersModel = new Users(nama, gender, telepon, pekerjaan, alamat, status);
-//                users.add(usersModel);
-//            }
-//        }catch (Exception e){
-//            e.printStackTrace();
-//        }
+
         return akun;
     }
 

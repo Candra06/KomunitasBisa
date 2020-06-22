@@ -15,6 +15,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -22,6 +23,9 @@ import java.util.prefs.Preferences;
 
 
 public class KomunitasPage implements Initializable {
+
+    @FXML
+    private JFXButton btnBackKmnts;
 
     @FXML
     private JFXButton btnBack;
@@ -46,8 +50,20 @@ public class KomunitasPage implements Initializable {
 
     @FXML
     private TableColumn<Komunitas, String> colRating;
+    @FXML
+    private TableView<Komunitas> tabelKomunitas;
+
+    @FXML
+    private TableColumn<Komunitas, String> clNamaKomunitas;
+
+    @FXML
+    private TableColumn<Komunitas, String> clRatingKmnts;
+
+    @FXML
+    private TableColumn<Komunitas, String> clRekening;
 
     ObservableList<Komunitas> observableList = FXCollections.observableArrayList();
+    ObservableList<Komunitas> list = FXCollections.observableArrayList();
 
     public void btnAddDataOnClick(ActionEvent actionEvent) {
         Helper.changePage(actionEvent, "add_komunitas");
@@ -68,7 +84,14 @@ public class KomunitasPage implements Initializable {
             }
             tableKomunitas.setItems(observableList);
         }else {
-            //coding dek kene zal sing level admin gae nampilne komunitas, sing ditampilne cuman nama komunitas e ae;
+            clNamaKomunitas.setCellValueFactory(new PropertyValueFactory<>("nama_komunitas"));
+            clRatingKmnts.setCellValueFactory(new PropertyValueFactory<>("rating"));
+            clRekening.setCellValueFactory(new PropertyValueFactory<>("no_rekening"));
+            ArrayList<Komunitas> dataKomunitas = Komunitas.getDataKomuitas();
+            for (Komunitas komunitas : dataKomunitas) {
+                list.add(new Komunitas(komunitas.getNama_komunitas(), komunitas.getRating(), komunitas.getId(), komunitas.getNo_rekening()));
+            }
+            tabelKomunitas.setItems(list);
         }
     }
 
@@ -89,5 +112,9 @@ public class KomunitasPage implements Initializable {
     }
 
     public void txtCariOnChange(ActionEvent actionEvent) {
+    }
+
+    public void btnBackKmntsOnClick(ActionEvent actionEvent) {
+        Helper.changePage(actionEvent, "dashboard_admin");
     }
 }

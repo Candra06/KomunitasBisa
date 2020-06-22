@@ -13,6 +13,7 @@ import java.util.prefs.Preferences;
 public class Donasi extends ORM {
     private static final String TABLE= "donasi";
     private int id_event;
+    private int id_donasi;
     private int id_user;
     private int jumlah_donasi;
     private String bukti_donasi;
@@ -38,16 +39,25 @@ public class Donasi extends ORM {
         this.event = event;
     }
 
-    public Donasi(int jumlah_donasi, String status, String event, String tanggal, String nama) {
+    public Donasi(int jumlah_donasi, String status, String event, String tanggal, String nama, int id_donasi) {
         this.jumlah_donasi = jumlah_donasi;
         this.status = status;
         this.event = event;
         this.create_at = tanggal;
         this.nama = nama;
+        this.id_donasi = id_donasi;
     }
 
     public String getNama() {
         return nama;
+    }
+
+    public int getId_donasi() {
+        return id_donasi;
+    }
+
+    public void setId_donasi(int id_donasi) {
+        this.id_donasi = id_donasi;
     }
 
     public void setNama(String nama) {
@@ -131,7 +141,8 @@ public class Donasi extends ORM {
                 String tanggal = resultSet.getString("create_at");
                 String nama = resultSet.getString("nama");
                 int nominal = resultSet.getInt("jmlh_donasi");
-                Donasi donasi_ = new Donasi(nominal, status, event,tanggal, nama);
+                int id = resultSet.getInt("id");
+                Donasi donasi_ = new Donasi(nominal, status, event,tanggal, nama, id);
                 donasi.add(donasi_);
             }
         }catch (Exception e){
@@ -178,10 +189,15 @@ public class Donasi extends ORM {
         return hasil;
     }
 
-    public static boolean UpdateDonasi(){
-        Map<String, String> data = null;
-        String value= "";
-        boolean hasil = update(TABLE, data, value);
+    public static boolean UpdateDonasi(int id, String status, String keterangan){
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date date = new Date();
+        String create_at = format.format(date);
+        Map<String, String> data = new HashMap<String, String>();
+        data.put("status", "'"+ status +"'");
+        data.put("keterangan", "'"+ keterangan +"'");
+        data.put("update_at", "'"+ create_at +"'");
+        boolean hasil = update(TABLE, data, "id="+id);
         return hasil;
     }
 }

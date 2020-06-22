@@ -82,8 +82,8 @@ public class DetailEvent implements Initializable {
             this.btnVolunteer.setVisible(false);
             this.btnDonasi.setVisible(false);
         }else {
-            this.btnVolunteer.setVisible(false);
-            this.btnDonasi.setVisible(false);
+            this.btnVolunteer.setVisible(true);
+            this.btnDonasi.setVisible(true);
         }
     }
 

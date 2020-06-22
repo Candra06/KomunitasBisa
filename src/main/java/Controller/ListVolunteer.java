@@ -80,9 +80,6 @@ public class ListVolunteer implements Initializable {
                     KonfirmaiVolunteer kn = loader.getController();
                     kn.getData(table.getSelectionModel().getSelectedItem().getId_volunteer());
                     kn.setId_volunteer(table.getSelectionModel().getSelectedItem().getId_volunteer());
-//                    KonfirmaiVolunteer konfirmaiVolunteer = loader.getController();
-//                    konfirmaiVolunteer.getData(table.getSelectionModel().getSelectedItem().getId_volunteer());
-//                    konfirmaiVolunteer.setId_volunteer(table.getSelectionModel().getSelectedItem().getId_volunteer());
                     Stage stage =new Stage();
                     stage.initStyle(StageStyle.UNDECORATED);
                     stage.setResizable(false);

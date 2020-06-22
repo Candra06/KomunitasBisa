@@ -43,6 +43,11 @@
                         <Image url="@../Assets/Image/Logowht.png" />
                     </image>
                 </ImageView>
+              <JFXButton fx:id="btnLogout" layoutX="108.0" layoutY="291.0" onAction="#btnLogoutOnClick" prefHeight="38.0" prefWidth="181.0" style="-fx-background-color: #6eecc6; -fx-border-radius: 10px; -fx-border-color: #fff; -fx-background-radius: 10px;" text="LOGOUT" textFill="WHITE">
+                  <font>
+                      <Font name="SansSerif Regular" size="16.0" />
+                  </font>
+              </JFXButton>
             </children>
         </Pane>
         <JFXButton fx:id="btnClose" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="864.0" layoutY="3.0" onAction="#btnCloseOnClick" prefHeight="20.0" prefWidth="20.0">

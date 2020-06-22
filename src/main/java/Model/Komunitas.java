@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.prefs.Preferences;
 
 public class Komunitas extends ORM{
     private static final String TABLE = "komunitas";
@@ -40,6 +41,13 @@ public class Komunitas extends ORM{
         this.nama_komunitas = nama_komunitas;
         this.rating = rating;
         this.id = id;
+    }
+
+    public Komunitas(String nama_komunitas, int rating, int id, String rekening) {
+        this.nama_komunitas = nama_komunitas;
+        this.rating = rating;
+        this.id = id;
+        this.no_rekening = rekening;
     }
 
     public int getId() {
@@ -147,6 +155,24 @@ public class Komunitas extends ORM{
         return komunitas;
     }
 
+    public static ArrayList<Komunitas> getDataKomuitas(){
+        ResultSet resultSet = selectAll(TABLE);
+        ArrayList<Komunitas> komunitas = new ArrayList<Komunitas>();
+        try {
+            while (resultSet.next()){
+                String nama_komunitas = resultSet.getString("nama_komunitas");
+                String rekening = resultSet.getString("no_rekening");
+                int rating = resultSet.getInt("rating");
+                int id = resultSet.getInt("id");
+                Komunitas komunitas_ = new Komunitas(nama_komunitas, rating, id, rekening);
+                komunitas.add(komunitas_);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return komunitas;
+    }
+
     public ArrayList<Komunitas> getDetailKomuitas(int id){
         ResultSet resultSet = selectAll(TABLE, String.format("id=%s", id));
         ArrayList<Komunitas> komunitas = new ArrayList<Komunitas>();
@@ -164,7 +190,7 @@ public class Komunitas extends ORM{
         return komunitas;
     }
 
-    public static boolean InsertKomunitas(String nama, String visi, String misi, String deskripsi, String logo){
+    public static boolean InsertKomunitas(String nama, String visi, String misi, String deskripsi, String logo,String no_rekening){
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Date date = new Date();
         String create_at = format.format(date);
@@ -174,6 +200,7 @@ public class Komunitas extends ORM{
         data.put("misi", "'"+misi+"'");
         data.put("deskripsi", "'"+deskripsi+"'");
         data.put("logo", "'"+logo+"'");
+        data.put("no_rekening", "'"+no_rekening+"'");
         data.put("create_at", "'"+create_at+"'");
         data.put("update_at", "'"+create_at+"'");
         boolean hasil = insert(TABLE, data);
@@ -189,10 +216,14 @@ public class Komunitas extends ORM{
         return hasil;
     }
 
-    public static boolean UpdateRating(){
-        Map<String, String> data = null;
-        String value= "";
-        boolean hasil = update(TABLE, data, value);
+    public static boolean UpdateRating(int id, int rating){
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date date = new Date();
+        String update_at = format.format(date);
+        Map<String, String> data = new HashMap<String, String>();
+        data.put("rating", "'"+ rating +"'");
+        data.put("update_at", "'"+ update_at+"'");
+        boolean hasil = update(TABLE, data, "id="+id);
         return hasil;
     }
 }
